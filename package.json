@@ -1,0 +1,7 @@
+{
+  "name": "theme-park-planner",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Plan theme park days and check live ride wait times.",
+  "engines": { "node": ">=18" }
+}
