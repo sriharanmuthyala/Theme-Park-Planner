@@ -29,5 +29,3 @@ Edits save in the browser you use (local storage), so each device keeps its own 
 ## Disclaimer
 
 Unofficial fan-made planner. Not affiliated with, endorsed by or sponsored by any theme park or park operator. Park and attraction names are used only to describe real places.
-
-
