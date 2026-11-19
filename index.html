@@ -938,7 +938,17 @@ document.addEventListener("click",function(e){var b=e.target.closest&&e.target.c
 setInterval(function(){if(document.hidden)return;if(cur==-4&&PK.id&&!PK.load)pkFetch();else if(cur>=0&&!FW.sent&&!document.querySelector("dialog[open]"))fwGo()},300000);
 var WX=null,WXR=null;
 function wxSet(v){if(v&&typeof v=="object")WX=v}
-var WXL=0;function wxLoad(){if(Date.now()-WXL<600000)return;WXL=Date.now();fetch("/api/weather").then(function(r){if(!r.ok)throw new Error("error "+r.status);return r.json()}).then(function(v){if(v&&v.days){wxSet(v);if(!document.querySelector("dialog[open]"))render()}}).catch(function(){WXL=0})}
+var WXL=0;
+function wxNws(){var J=function(u){return fetch(u,{headers:{Accept:"application/geo+json"}}).then(function(r){if(!r.ok)throw new Error("error "+r.status);return r.json()})};
+ return J("https://api.weather.gov/points/33.81,-117.92").then(function(pt){return J(pt.properties.forecast)}).then(function(fc){var days={},C=function(f){return Math.round((f-32)*50/9)/10};
+  ((fc.properties&&fc.properties.periods)||[]).forEach(function(p){var k=String(p.startTime||"").slice(0,10);if(!/^\d{4}-\d\d-\d\d$/.test(k))return;var d=days[k]||(days[k]={}),f=p.temperature;
+   if(typeof f=="number"&&p.temperatureUnit=="C")f=f*9/5+32;if(typeof f=="number"){if(p.isDaytime)d.hi=C(f);else d.lo=C(f)}
+   if(p.isDaytime||!d.txt)d.txt=p.shortForecast||d.txt;var pop=p.probabilityOfPrecipitation&&p.probabilityOfPrecipitation.value;if(typeof pop=="number")d.pop=Math.max(d.pop||0,pop);
+   var m=String(p.windSpeed||"").match(/\d+/g);if(m)d.wind=Math.max(d.wind||0,Math.round(Math.max.apply(null,m.map(Number))*1.609))});
+  return{t:Date.now(),src:"nws",days:days}})}
+function wxLoad(){if(Date.now()-WXL<600000)return;WXL=Date.now();
+ fetch("/api/weather").then(function(r){if(!r.ok)throw new Error("error "+r.status);return r.json()}).catch(function(){return wxNws()})
+ .then(function(v){if(v&&v.days){wxSet(v);if(!document.querySelector("dialog[open]"))render()}}).catch(function(){WXL=0})}
 var WXC=[[[0],"☀️","Clear"],[[1],"🌤️","Mainly clear"],[[2],"⛅","Partly cloudy"],[[3],"☁️","Overcast"],[[45,48],"🌫️","Fog"],[[51,53,55,56,57],"🌦️","Drizzle"],[[61,80],"🌦️","Light rain"],[[63,81],"🌧️","Rain"],[[65,82],"🌧️","Heavy rain"],[[66,67],"🌧️","Freezing rain"],[[71,73,75,77,85,86],"🌨️","Snow"],[[95],"⛈️","Thunderstorm"],[[96,99],"⛈️","Thunderstorm, hail"]];
 var WXT=[[/thunder|t-?storm/i,"⛈️"],[/snow|flurr|sleet|wintry/i,"🌨️"],[/heavy rain|downpour/i,"🌧️"],[/rain|shower|drizzle/i,"🌦️"],[/fog|haze|smoke|mist/i,"🌫️"],[/wind|breezy|gust/i,"💨"],[/overcast|mostly cloudy|^cloudy/i,"☁️"],[/partly cloudy|partly sunny/i,"⛅"],[/mostly clear|mostly sunny/i,"🌤️"],[/clear|sunny|fair/i,"☀️"]];
 function wxIcon(w){if(typeof w.code=="number"){for(var i=0;i<WXC.length;i++)if(WXC[i][0].indexOf(w.code)>=0)return WXC[i][1]}
