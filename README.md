@@ -1,6 +1,6 @@
 # Theme Park Planner
 
-A single-page trip planner for theme park days, with live ride wait times for any park that Queue-Times covers.
+A single-page trip planner for theme park days, with live ride wait times for Disneyland Park and Disney California Adventure from Queue-Times.
 
 Live wait times: **Powered by [Queue-Times.com](https://queue-times.com/)**
 
@@ -9,8 +9,8 @@ Live wait times: **Powered by [Queue-Times.com](https://queue-times.com/)**
 | File | What it does |
 | --- | --- |
 | `index.html` | The whole app: day plans, maps, ride booking tracker, planner, manual and the **Live waits** tab |
-| `api/waits.js` | Fetches live waits for one park from Queue-Times (`/api/waits?park=16`), cached for 5 minutes |
-| `api/parks.js` | Fetches the list of all parks (`/api/parks`), cached for 24 hours |
+| `api/waits.js` | Fetches live waits from Queue-Times for Disneyland (`/api/waits?park=16`) or California Adventure (`?park=17`), cached for 5 minutes |
+| `api/parks.js` | Lists the two parks the planner covers (`/api/parks`), cached for 24 hours |
 | `api/weather.js` | Fetches the daily forecast for Anaheim from the US National Weather Service (`/api/weather`), cached for 1 hour |
 
 The app calls `/api/...` on its own site, so live waits need hosting that runs those functions, such as Vercel. On GitHub Pages the plans still work but live waits won't load.

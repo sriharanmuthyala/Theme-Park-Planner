@@ -1,12 +1,12 @@
 // Live wait times for one park, fetched from Queue-Times.com.
-// Usage: /api/waits?park=16   (16 = Disneyland Park, 17 = Disney California Adventure)
+// Usage: /api/waits?park=16   (16 = Disneyland Park, 17 = Disney California Adventure; only these two are served)
 // Vercel's CDN caches each park's answer for 5 minutes, matching how often Queue-Times updates.
 // Data: Powered by Queue-Times.com (https://queue-times.com/)
 
 module.exports = async (req, res) => {
   const park = String((req.query && req.query.park) || "");
-  if (!/^\d{1,5}$/.test(park)) {
-    res.status(400).json({ error: "Add ?park=<number>, for example ?park=16" });
+  if (park !== "16" && park !== "17") {
+    res.status(400).json({ error: "Only ?park=16 (Disneyland) and ?park=17 (Disney California Adventure) are available" });
     return;
   }
   try {
