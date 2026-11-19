@@ -35,7 +35,7 @@ self.addEventListener("fetch", (e) => {
   if (req.method !== "GET") return;
   const u = new URL(req.url);
   if (u.origin !== location.origin) {
-    if (u.hostname === "api.weather.gov") e.respondWith(networkFirst(req, 8000));
+    if (u.hostname === "api.weather.gov" || u.hostname === "api.open-meteo.com") e.respondWith(networkFirst(req, 8000));
     return;
   }
   if (req.mode === "navigate") {

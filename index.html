@@ -531,6 +531,8 @@ body{padding-bottom:calc(74px + env(safe-area-inset-bottom,0px))}
 .toast.on{opacity:1;transform:translate(-50%,0);pointer-events:auto}
 @media(min-width:900px){.toast{bottom:24px}}
 [hidden]{display:none!important}
+.mel{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;margin:-6px 0 0;padding:9px 14px;background:var(--card);border:1px solid var(--line);border-radius:12px;box-shadow:var(--sh1);font-size:13px;color:var(--mut);line-height:1.35}
+.mel .mlh{font-weight:700;color:var(--ink);font-size:13.5px}.mel .mlt{font-variant-numeric:tabular-nums;font-weight:700;color:var(--ink);font-size:15px}.mel .mlw{display:inline-flex;align-items:center;gap:5px}.mel .mlw i{font-style:normal;font-size:16px}.mel .mlw b{color:var(--ink)}.mel small{font-size:11.5px}.mel a{color:inherit}
 html,body{overflow-x:clip;max-width:100%}
 .ps,.alc,.pmt,.pscr{max-width:100%}.ps table{max-width:100%}
 header .top{align-items:baseline}header .st{white-space:nowrap}
@@ -621,6 +623,7 @@ header .top{align-items:baseline}header .st{white-space:nowrap}
 <li><b>Edit intro and hours note:</b> edits the two paragraphs at the top.</li>
 <li><b>Reset everything to the original plan:</b> after a confirmation, replaces the whole app with the original plan. This erases your edits, Done and Closed marks, logged LL times, added days and the undo history. There is no way back.</li>
 </ul>
+<p><b>Melbourne time and weather:</b> a small strip under the trip header shows the time in Melbourne, the current weather there (with today’s high and low), and how many hours Melbourne is ahead of Anaheim. The clock updates by itself; the weather refreshes every 15 minutes from Open-Meteo.</p>
 
 <h3>Reading a day tab</h3>
 <p>A day tab starts with the heading, focus (route of areas), arrival line and any extra note. Under those are the day buttons, the Lightning Lane tracker, then the map and the plan. On a wide screen the map sits beside the plan and stays in view. On a phone they stack.</p>
@@ -1120,7 +1123,7 @@ function dash(){
   var tdd=bix>=0?bsd[bix]:S.days[todayIdx];big=bix>=0?"Day "+(bix+1)+" of "+bsd.length:"Today";sub=tdd.p=="ca"?"California Adv today":"Disneyland Park today"}
  else{big="Flex day";sub="No park plan today"}
  var cc=["c1","c2","c3","c4"];
- var o='<div class="dash"><section class="dhead"><div><h1>Disneyland holiday trip</h1><p>22–26 Nov 2026 · Anaheim, California</p></div><div class="dstats"><div class="dst"><b>'+esc(big)+'</b><span>'+esc(sub)+'</span></div></div></section>';
+ var o='<div class="dash"><section class="dhead"><div><h1>Disneyland holiday trip</h1><p>22–26 Nov 2026 · Anaheim, California</p></div><div class="dstats"><div class="dst"><b>'+esc(big)+'</b><span>'+esc(sub)+'</span></div></div></section>'+melHTML();
  o+=dGlance();o+='<h2 class="dh">Your days</h2><div class="gl dcards">';
  var cards=S.days.map(function(d,i){return{i:i,d:d,k:dates[i]?dates[i].k:99999999}}),flexDone=false,flexK=20261124;
  var hasFlex=cards.some(function(c){return c.k==flexK});
@@ -1882,6 +1885,20 @@ el("view").onclick=function(e){var b=e.target.closest("button"),t=e.target;
  else if(b.id=="pv"||b.id=="nx"){}};
 el("view").addEventListener("click",function(e){var b=e.target.closest("button");if(!b||(b.id!="pv"&&b.id!="nx")||cur<0)return;var d=S.days[cur],P=[];d.blocks.forEach(function(bb,i){bb.rows.forEach(function(r,j){if((r.lc||[]).length)P.push([i,j])})});if(!P.length)return;
  var k=P.findIndex(function(p){return p[0]==sel.b&&p[1]==sel.r});k=b.id=="nx"?Math.min(P.length-1,k+1):Math.max(0,k<0?0:k-1);sel={b:P[k][0],r:P[k][1]};render();var c=el("view").querySelector('.r[aria-current]');if(c)c.scrollIntoView({block:"center",behavior:"smooth"})});
+/* ===== Melbourne time and weather on Home ===== */
+var MEL={w:null,at:0,busy:0};try{var _m=JSON.parse(localStorage.getItem("tpp-mel")||"null");if(_m&&_m.w)MEL.w=_m.w,MEL.at=_m.at||0}catch(e){}
+function tzHours(tz){var d=new Date();try{var p=function(z){var o={};new Intl.DateTimeFormat("en-US",{timeZone:z,hourCycle:"h23",year:"numeric",month:"numeric",day:"numeric",hour:"numeric",minute:"numeric"}).formatToParts(d).forEach(function(x){o[x.type]=x.value});return Date.UTC(+o.year,+o.month-1,+o.day,+o.hour,+o.minute)};return (p(tz)-p("UTC"))/36e5}catch(e){return null}}
+function melClock(){try{return new Intl.DateTimeFormat("en-AU",{timeZone:"Australia/Melbourne",weekday:"short",hour:"numeric",minute:"2-digit"}).format(new Date())}catch(e){return""}}
+function melDiff(){var a=tzHours("Australia/Melbourne"),b=tzHours("America/Los_Angeles");if(a==null||b==null)return"";var h=Math.round((a-b)*2)/2;return h>0?h+" h ahead of Anaheim":h<0?(-h)+" h behind Anaheim":"same time as Anaheim"}
+function melLoad(){if(MEL.busy||Date.now()-MEL.at<900000)return;MEL.busy=1;
+ fetch("https://api.open-meteo.com/v1/forecast?latitude=-37.81&longitude=144.96&current=temperature_2m,weather_code&daily=temperature_2m_max,temperature_2m_min&timezone=Australia%2FMelbourne&forecast_days=1").then(function(r){if(!r.ok)throw new Error(r.status);return r.json()}).then(function(j){var c=j.current||{},d=j.daily||{};
+  MEL.w={tc:c.temperature_2m,code:c.weather_code,hi:d.temperature_2m_max&&d.temperature_2m_max[0],lo:d.temperature_2m_min&&d.temperature_2m_min[0]};MEL.at=Date.now();MEL.busy=0;try{localStorage.setItem("tpp-mel",JSON.stringify(MEL))}catch(e){}
+  if(cur==-1&&!document.querySelector("dialog[open]")){var x=el("melbox");if(x)x.outerHTML=melHTML()}}).catch(function(){MEL.busy=0;MEL.at=Date.now()-600000})}
+function melHTML(){melLoad();var w=MEL.w,wx="";
+ if(w&&w.tc!=null){var ic=wxIcon({code:w.code}),ds=wxDesc({code:w.code});wx='<span class="mlw"><i aria-hidden="true">'+ic+'</i><b>'+Math.round(w.tc)+'°C</b> '+esc(ds)+(w.hi!=null?' · H '+Math.round(w.hi)+'° L '+Math.round(w.lo)+'°':'')+'</span>'}
+ else wx='<span class="mlw">Weather loading…</span>';
+ return '<section class="mel" id="melbox" aria-label="Melbourne time and weather"><span class="mlh">Melbourne</span><span class="mlt" id="melclk">'+esc(melClock())+'</span>'+wx+'<small>'+esc(melDiff())+' · <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a></small></section>'}
+setInterval(function(){var c=el("melclk");if(c)c.textContent=melClock()},20000);
 /* ===== Alerts ===== */
 var AL={on:{cl:true,ll:true,wt:true},w:[],log:[],seen:0,fired:{}},ALK="tpp-alerts-v1",ALF={p:"dl"},SWR=null,TT=0;
 try{var _a=JSON.parse(localStorage.getItem(ALK)||"null");if(_a&&_a.on){for(var _k in _a.on)AL.on[_k]=!!_a.on[_k];AL.w=_a.w||[];AL.log=_a.log||[];AL.seen=_a.seen||0;AL.fired=_a.fired||{}}}catch(e){}
