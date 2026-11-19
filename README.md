@@ -11,6 +11,7 @@ Live wait times: **Powered by [Queue-Times.com](https://queue-times.com/)**
 | `index.html` | The whole app: day plans, maps, ride booking tracker, planner, manual and the **Live waits** tab |
 | `api/waits.js` | Fetches live waits for one park from Queue-Times (`/api/waits?park=16`), cached for 5 minutes |
 | `api/parks.js` | Fetches the list of all parks (`/api/parks`), cached for 24 hours |
+| `api/weather.js` | Fetches the daily forecast for Anaheim from the US National Weather Service (`/api/weather`), cached for 1 hour |
 
 The app calls `/api/...` on its own site, so live waits need hosting that runs those functions, such as Vercel. On GitHub Pages the plans still work but live waits won't load.
 
