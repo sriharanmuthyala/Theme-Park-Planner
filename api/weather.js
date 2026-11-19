@@ -1,6 +1,6 @@
 // Daily forecast for the trip's park area, fetched from the US National Weather Service (api.weather.gov).
 // Usage: /api/weather   (defaults to Anaheim, CA)   or /api/weather?lat=33.81&lng=-117.92
-// Returns { t, src: "nws", days: { "YYYY-MM-DD": { hi, lo, pop, wind, txt } } } with temperatures in °C and wind in km/h.
+// Returns { t, src: "nws", srcT (when the forecast was issued), days: { "YYYY-MM-DD": { hi, lo, pop, wind, txt } } } with temperatures in °C and wind in km/h.
 // Vercel's CDN caches the answer for 1 hour.
 
 const UA = "theme-park-planner (github.com/sriharanmuthyala/theme-park-planner)";
@@ -45,7 +45,8 @@ module.exports = async (req, res) => {
       }
     }
     res.setHeader("Cache-Control", "public, s-maxage=3600, stale-while-revalidate=1800");
-    res.status(200).json({ t: Date.now(), src: "nws", days });
+    const srcT = (fc.properties && (fc.properties.updateTime || fc.properties.generatedAt)) || "";
+    res.status(200).json({ t: Date.now(), src: "nws", srcT, days });
   } catch (e) {
     res.status(502).json({ error: String((e && e.message) || "Couldn't reach the weather service") });
   }
