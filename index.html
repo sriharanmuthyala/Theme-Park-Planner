@@ -190,6 +190,7 @@ ol.tl{list-style:none;margin:6px 0;padding:0}ol.tl li{display:flex;gap:8px;align
 .pkc select{min-width:0;flex:1 1 240px}.pkc input{flex:1 1 160px}.pks{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}.pks div{background:var(--card);border:1px solid var(--line);border-radius:9px;padding:6px 10px;min-width:96px}.pks b{display:block;font-size:18px}.pks span{color:var(--mut);font-size:12px}
 .pkl{background:var(--card);border:1px solid var(--line);border-radius:10px;margin:10px 0;overflow:hidden}.pkl h3{margin:0;padding:8px 10px;font-size:14px;border-bottom:1px solid var(--line);background:var(--water)}
 .pkr{display:flex;justify-content:space-between;gap:10px;padding:6px 10px;border-bottom:1px solid #8882;font-size:14px}.pkr:last-child{border-bottom:0}.pkr .w{font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}.pkr.cl{color:var(--mut)}.pkr.cl .w{font-weight:400}
+.pkcal{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:6px 0 10px}.pkcal a.ib{text-decoration:none;display:inline-flex;align-items:center}
 .pkr .w.lo{color:#2a9d8f}.pkr .w.md{color:#b7791f}.pkr .w.hi{color:#c0392b}.pk .old{opacity:.55}
 
 
@@ -671,7 +672,7 @@ th{background:var(--bhbg);color:var(--bhfg)}
 <p>Each day tab has a Live wait times panel above the Lightning Lane tracker. It asks the free Queue-Times.com feed for current waits and open or closed status for that day's park, and shows "Powered by Queue-Times.com" as their terms require.</p>
 <ul>
 <li><b>Refresh live waits:</b> waits load by themselves when you open a day tab, and again every 5 minutes while the tab is open. Tap Refresh live waits to update straight away. It takes a few seconds.</li>
-<li><b>Live waits tab:</b> shows current waits for Disneyland Park and Disney California Adventure. Pick a park from the list, group rides by area or sort by wait, and search for a ride. The app remembers the last park you picked.</li>
+<li><b>Live waits tab:</b> shows current waits for Disneyland Park and Disney California Adventure. Pick a park from the list, group rides by area or sort by wait, and search for a ride. The app remembers the last park you picked. Crowd calendar opens Queue-Times’ crowd forecast for the chosen park in a new tab.</li>
 <li><b>Data time and fetch time:</b> the panel shows two times. "Queue-Times data from ..." is when the feed last recorded a wait for any ride in that park, with how long ago that was. "Fetched ..." is only when this app last asked the feed. When a park is closed, Queue-Times keeps serving its last recorded waits, so the fetch time can be recent while the data is hours old.</li>
 <li><b>Stale warning:</b> if the data time is more than 30 minutes old, the panel says "Park likely closed or feed not updating. These waits are out of date." and greys the list. After a fetch, the status line says "Updated, but the feed's data is X h old (park likely closed)" instead of "Updated just now". Old waits on ride rows and in Nearby alternatives show greyed with "(old)", and in the Planner's Easy adds they show greyed instead of being used to rank rides. Re-plan ignores old waits and old open or closed status, so it does not pick a backup or add heads-up lines from them. </li>
 <li><b>On ride rows:</b> a line such as "Live: Peter Pan's Flight: 25 min" appears under rides it can match by name. Rides it can't match show nothing. "Closed" means the feed lists the ride as closed. The app never marks a ride closed for you, so tap Closed yourself.</li>
@@ -913,7 +914,7 @@ function pkView(){pkLoadList();if(PK.id&&!PK.load&&(!PK.data||Date.now()-PK.at>3
  if(PK.list){h+='<select id="pksel" aria-label="Park">'+PK.list.map(function(g){return '<optgroup label="'+esc(g.name)+'">'+g.parks.map(function(p){return '<option value="'+p.id+'"'+(p.id==PK.id?' selected':'')+'>'+esc(p.name)+' ('+esc(p.country)+')</option>'}).join("")+'</optgroup>'}).join("")+'</select>'}
  else h+='<span class="hint">'+(PK.lerr?'Couldn’t load the park list ('+esc(PK.lerr)+').':'Loading parks…')+'</span>';
  h+='<button class="ib pri" id="pkrf"'+(PK.load?' disabled':'')+'>'+(PK.load?'Loading…':'Refresh')+'</button></div>';
- if(f)h+='<p class="hint">'+esc(f.g)+' · '+esc(f.p.country)+(f.p.timezone?' · local time '+esc(pkTime(f.p.timezone)):'')+'</p>';
+ if(f)h+='<p class="hint">'+esc(f.g)+' · '+esc(f.p.country)+(f.p.timezone?' · local time '+esc(pkTime(f.p.timezone)):'')+'</p>';if(PK.id)h+='<p class="pkcal"><a class="ib" href="https://queue-times.com/parks/'+PK.id+'/calendar" target="_blank" rel="noopener">Crowd calendar for '+esc(f?f.p.name:(PK.id==17?'Disney California Adventure':'Disneyland'))+' \u2197</a> <span class="hint">Opens Queue-Times\u2019 crowd forecast heat map in a new tab.</span></p>';
  if(PK.derr)h+='<div class="lt fw err" role="status">Couldn’t load waits for this park ('+esc(PK.derr)+'). Try Refresh.</div>';
  var d=PK.data;if(d&&!PK.derr){var op=d.rides.filter(function(r){return r.open}),ws=op.filter(function(r){return r.wait!=null}),avg=ws.length?Math.round(ws.reduce(function(a,r){return a+r.wait},0)/ws.length):null,mx=ws.reduce(function(a,r){return r.wait>a.wait?r:a},{wait:-1});
   var stl=d.asof&&Date.now()-d.asof>1800000;
