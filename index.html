@@ -182,7 +182,7 @@ dialog label{display:block;font-size:12.5px;color:var(--mut);margin-top:8px}dial
 
 .lvb .fw{font-weight:600;margin:4px 0}.lvb .fw.wait{color:#b7791f}.lvb .fw.ok{color:#2a9d8f}.lvb .fw.err{color:#c0392b}.lvb .fw.warn{color:#b7791f}.lvb button[disabled]{opacity:.5;cursor:not-allowed}
 
-ol.tl{list-style:none;margin:6px 0;padding:0}ol.tl li{display:flex;gap:8px;align-items:flex-start;padding:5px 0;border-bottom:1px solid #8882}.tt{flex:0 0 4.6em;font-variant-numeric:tabular-nums;font-size:.85em;opacity:.85}.tc{flex:0 0 3.2em;font-style:normal;font-size:.72em;text-align:center;padding:2px 4px;border-radius:8px;background:#8883}.pgt .pwr label{flex:1 1 100%;min-width:0}.pgt select{width:100%;max-width:100%;box-sizing:border-box}.gtl{display:flex;flex-wrap:wrap;gap:6px 8px;margin:6px 0}.gtl span{display:flex;flex-direction:column;gap:1px;padding:6px 10px;border:1px solid var(--line);border-radius:8px;font-size:.85em;background:var(--card)}.gtl i{font-style:normal;font-size:.75em;text-transform:uppercase;letter-spacing:.06em;opacity:.7}.dgg{display:block;font-size:.85em;opacity:.8}.tc.cGATE{background:#8a6bd144}.dgate{font-size:.8em;opacity:.8;margin:2px 0}
+ol.tl{list-style:none;margin:6px 0;padding:0}ol.tl li{display:flex;gap:8px;align-items:flex-start;padding:5px 0;border-bottom:1px solid #8882}.tt{flex:0 0 4.6em;font-variant-numeric:tabular-nums;font-size:.85em;opacity:.85}.tc{flex:0 0 3.2em;font-style:normal;font-size:.72em;text-align:center;padding:2px 4px;border-radius:8px;background:#8883}.pgt .pwr label{flex:1 1 100%;min-width:0}.pgt select{width:100%;max-width:100%;box-sizing:border-box}.llchk{display:flex;gap:8px;align-items:flex-start;margin:8px 0}.llchk input{margin-top:4px;flex:none}.llchk small{display:block;opacity:.8;font-weight:400;font-size:.85em;margin-top:2px}.gtl{display:flex;flex-wrap:wrap;gap:6px 8px;margin:6px 0}.gtl span{display:flex;flex-direction:column;gap:1px;padding:6px 10px;border:1px solid var(--line);border-radius:8px;font-size:.85em;background:var(--card)}.gtl i{font-style:normal;font-size:.75em;text-transform:uppercase;letter-spacing:.06em;opacity:.7}.dgg{display:block;font-size:.85em;opacity:.8}.tc.cGATE{background:#8a6bd144}.dgate{font-size:.8em;opacity:.8;margin:2px 0}
 .tc.cLL{background:#e8b93b55}.tc.cRIDE,.tc.cSHOW{background:#3a8dde44}.tc.cFREE{background:#8883}.tc.cLEISURE{background:#4caf8244}.tc.cDINE{background:#e0704444}.tx2{flex:1;min-width:0}.tx2 small{display:block;opacity:.7}tr.pcur{background:#3a8dde22}.pchips{margin:8px 0}
 .dpill em.ver{background:#6b4fbb;color:#fff;font-style:normal}
 .sgt{font-weight:600;color:var(--acc);margin:2px 0;font-size:.92em}.trk button .sgt{font-weight:600}
@@ -568,6 +568,7 @@ header .top{align-items:baseline}header .st{white-space:nowrap}
 <li><b>Day tabs:</b> Sun Nov 22 (Disneyland), Mon Nov 23 (Disney California Adventure), Wed Nov 25 and Thu Nov 26 (Disneyland). Tue Nov 24 is a flex day and is not in the app.</li>
 <li><b>Time blocks and rows:</b> each day is split into time blocks, and each block holds colour-coded rows for LL actions, walks, rides, dining, leisure, shows and notes.</li>
 <li><b>Route map:</b> a schematic park map with numbered pins that follow the plan.</li>
+<li><b>Rules and strategies:</b> every rule the planner follows is listed at the end of this manual, under Rules and strategies.</li>
 <li><b>Tracking and re-planning:</b> Done and Closed buttons, an LL time tracker, and a re-plan button that proposes changes for you to accept or undo.</li>
 </ul>
 <p>You can edit anything: every row, block and day heading, and you can add or delete them. This Manual tab is fixed text and is not changed by edits or by Reset.</p>
@@ -675,6 +676,8 @@ header .top{align-items:baseline}header .st{white-space:nowrap}
 </ul>
 
 <h3>The route map</h3>
+<p><b>Crowd forecast and queue times.</b> Each day has an expected crowd level (Sun 22 Busy; Mon 23, Wed 25 and Thu 26 Very Busy). The queue time the plan allows for each ride and attraction is the usual time for that ride and time of day, scaled by that level, so Very Busy days get longer queues and fewer activities fit. Lightning Lane advice uses the same level. Days with no forecast use the usual times. These are planning estimates, not live waits.</p>
+<p><b>Walking map in the planner.</b> Suggested day plans shows a collapsible walking map for the day you are planning, above the settings. It draws the same numbered stops and dashed route as the day tab, so you can check the walking while you change gates, parade spots and strategies. The version you pick in the day selector is the one shown.</p>
 <p>Each day tab has a hand-drawn schematic: Disneyland for Disneyland days and California Adventure for DCA days. It is not to scale and not Disney's official map. Use the written walk guides and the Disneyland app for real directions.</p>
 <p><b>Pins.</b> A numbered circle marks each place in your plan, in plan order. The colour is the row type. Rows without a place, such as walks and notes, have no pin. Stops that share a place fan out slightly so you can tap each one.</p>
 <table><tr><th>Pin look</th><th>Meaning</th></tr>
@@ -741,8 +744,11 @@ header .top{align-items:baseline}header .st{white-space:nowrap}
 <p><b>Coverage check:</b> the third Planner button looks at the whole trip at once. For each park it compares everything you selected on any day with the versions you have chosen for each day, and says how many are included and how many are left out. Under each day, tap V1, V2 and so on to choose which version to assess (the starred one is your preferred version, and Make preferred sets it). A line shows what that version leaves out and whether it is planned on another day. Below, each activity left out of every chosen version shows where it would fit, with the same rules as before (Lightning Lane slots, reservations and shows keep their times, no more than 30 min extra walking, nothing else pushed out), with an Add button. It also offers any other version that already includes it, and I do not need this one removes it from your selections. Each day also has a small table with one row per version showing its item count, ride time, walking time and rest time, with the difference from the version you are assessing in small type, so you can see what a swap or an addition would cost or save. Tap a row to assess that version. Ride time uses each ride’s typical length, and queues are not counted. Walking counts the walk rows written in each version, so a version built by the Planner can show more walking than a hand-written day. A total for the chosen versions sits under each park summary.</p>
 <p><b>Create new version and modify a version:</b> in Suggested day plans, pick a day and a pace, then Create new version makes a copy of that day with the plan. To change one that already exists, choose it in the Version row under the calendar. A Modify this version section then lists its activities. Tap one to remove it. Add one from Suggested additions (things you selected that fit) or from the full list for that park. An addition is only accepted if it fits at the version\u2019s pace and day window without moving Lightning Lane slots, reservations or shows, without more than 30 minutes of extra walking and without pushing anything else out, otherwise a message says why. Undo reverses the last change. Replace a version with this plan overwrites a whole version with the plan on screen, and asks you to tap twice.</p>
 <p><b>Day window:</b> under Suggested day plans, each day has a Start and an End. Start can be rope drop (the arrival time in the day details) or any half hour from 6:00 AM to 8:00 PM. End can be park close, after the parade, after the fireworks (or World of Color in California Adventure) or any half hour from 12:00 PM to 11:30 PM. The plan is built inside that window using the same rules as before, so Lightning Lane slots, reservations and shows keep their times, walking stays short and rides are not doubled back. Anything fixed that falls outside the window moves to Dropped, and lunch or dinner breaks outside it are skipped. The window shows under the day heading and is carried to a new day tab made from the plan. The end time has to be at least two hours after the start.</p>
+<p><b>Plans follow your choices:</b> every choice in the planner reshapes the suggested plan straight away: activity selections and priorities, pace, day window, gates, parade viewing spot, Lightning Lane strategy and extras, and dining reservation times. A reservation time you record becomes a fixed time in the plan. When you are on a version, that version is rebuilt at once, so the day plan and dashboard follow. When you are on the original day, the change is also passed to its versions (each keeps its own pace and Modify changes) and they are rebuilt; the original day itself is never changed. Plans are always built from the original day's fixed bookings (Lightning Lane slots, reservations and shows), so switching a choice back restores the earlier plan.</p>
 <p><b>Entry and exit gates:</b> under Suggested day plans, below the day window, choose which gate you come in by and which you leave by. Disneyland Park offers the Main Entrance and the Tomorrowland Monorail station. California Adventure offers the Main Entrance and the Grand Californian Hotel gate (hotel guests only). The plan then starts in the area the entry gate opens into and finishes with the walk to the exit gate, which counts as walking time and must still fit before your end time. Lightning Lane slots, reservations, shows and every other rule are unchanged. Your choice appears on the day tab, in the schedule as Enter and Leave lines, and on the dashboard. Create new version or Update this version carries it onto the plan. Leave a gate on No preference to plan as before.</p>
 <p><b>Parade viewing spot:</b> when a parade is selected for a day, Suggested day plans shows a Parade viewing spot card. Pick where along the route you want to watch, listed from the start of the route to the end: it's a small world and Alice in Wonderland in Fantasyland, the hub in front of the castle, mid Main Street, or the Town Square end by the Fire Station. The plan walks you to that land, allows a suggested lead time to hold the spot, and rebuilds the rest of the day around it. Lightning Lane slots, reservations, other shows, the day window and the other rules still apply. If other fixed times leave less time than suggested, the card and the schedule say how late you would be. Lead times are estimates, so confirm the parade times in the Disneyland app.</p>
+<p><b>Lightning Lane strategy:</b> under Suggested day plans, choose Standard or Stacking for each day. With Stacking you also pick the time you switch to book and redeem (default 12:00 PM, from 9:00 AM to 2:00 PM). An earlier switch means fewer stacked rides, a later one means more. The plan, booking prompts and dashboard follow. Standard books the first Lightning Lane at the gate and each next one as you tap into the last or 2 hours after booking. Stacking uses the 2-hour rule to book again and again from the start of the day until about 12 PM, choosing or modifying each booking to an early-evening return time, then switches to book and redeem. The planner moves the stacked rides to early-evening slots starting about 5 PM, around your reservations, shows and other fixed times, and lists the booking times in the schedule. A ride that cannot fit before the end of the day keeps its standard time. Evening slots are not always available, so check the Disneyland app. Other rules are unchanged.</p>
+<p><b>Optional extras:</b> under the Standard or Stacking choice, each park offers extras you can switch on in any combination, per day. Disneyland Park has Right side first (the right side of the park, Tomorrowland, Mickey's Toontown and Fantasyland, is done first as standby with no Lightning Lane, and the left side keeps your strategy) and Tier order (Tier 1 book first, Tier 2 plan ahead, Tier 3 no rush, from the guide you supplied). California Adventure has Tier order only, using Disney Tourist Blog's booking-availability notes. With Standard, tier order gives the Lightning Lane slots already in the plan out by tier, so Tier 1 rides take the earliest slots, and Tier 3 bookings are made later. With Stacking, Tier 1 then Tier 2 rides are stacked and Tier 3 rides are not. Rides not in a tier count as Tier 2. Each choice shows its effect on walking and rest compared with Standard.</p>
 <p>In Planner, Suggested day plans, pick a day and a pace. Casual rests after every 2 activities with slower walking and longer meals. Balanced rests after every 3. Quick keeps only short breaks to fit the most activities. Lightning Lane slots, reservations and shows keep their times, and rides are ordered to limit walking and backtracking. Anything that no longer fits is listed as Dropped, with another day, a break to swap, or a pace where it fits. Create new version copies the plan for that pace and leaves your original day alone.</p>
 <h3>Preferred version of a day</h3>
 <p>When a day has more than one version, tap <b>Make this my preferred version</b> just under the day heading in the day view. A star marks it. It then sits first in the tab menu and on the dashboard stack, and it is the version that opens on top every time you load the app. You can still look at the other versions from the menu or the dashboard, but the preferred one returns on top the next time you open the app. Tap the button again to clear it. Removing the preferred version clears the star.</p>
@@ -842,6 +848,178 @@ header .top{align-items:baseline}header .st{white-space:nowrap}
 <p>The map key is also a filter: tap a type to show only that type's pins on the map and rows in the plan, tap more types to add them, tap again to remove one, or use Show all. The filter is only a view and never changes your plan.</p>
 <p>Next to each ride's live wait is a short busyness tag (Lighter, Busy, Busiest, Easing) for that part of the day. It is a general crowd pattern for that part of the day, based on TouringPlans' description of Disneyland traffic, not a measured average in minutes. Treat it as a guide only.</p>
 <p>Each time block shows its Total time: how long you have from its start to the next block's start. For the last block it shows an estimate from the row durations. The Time button on a block asks only for a new start time and moves that block and every block after it by the same amount, keeping the original in the 'was' note.</p>
+<h2>Rules and strategies</h2>
+<p>Every rule the planner follows, in one place. Times are California time. Queue times and walking are planning estimates, not live data. The same list is also published as a separate page.</p>
+<h3 id="rs-order">How a plan is built</h3>
+<p>Rules apply in this order. A higher one is never broken to satisfy a lower one.</p>
+<ol>
+<li><b>Fixed times stay put:</b> Lightning Lane slots, dining reservations and show times.</li>
+<li><b>Day window and gates:</b> nothing is planned outside your start and end, and the exit walk must fit.</li>
+<li><b>Priorities:</b> must-do items are protected over ordinary ones.</li>
+<li><b>Pace:</b> sets walking speed, breaks, meal length and queue allowance.</li>
+<li><b>Route:</b> ordered to cut walking and backtracking, using park guide advice.</li>
+<li><b>Whatever does not fit</b> goes to Dropped, with a suggestion for where it could fit instead.</li>
+</ol>
+<p class="hint">Every change in the planner rebuilds the current version straight away. Plans are always built from the original day's bookings, so switching a choice back restores the earlier plan.</p>
+<h3 id="rs-fixed">Fixed times</h3>
+<ul>
+<li>A Lightning Lane return time, a dining reservation or a show time is an <b>anchor</b>. Anchors are never moved to suit other activities.</li>
+<li>A recorded reservation time in the planner becomes a fixed time in every version of that day.</li>
+<li>Walking to an anchor is counted, and arriving after its time is shown as minutes late.</li>
+<li>Booking rows that point to an anchored ride are removed so the ride is not planned twice.</li>
+<li>Anything with a fixed time outside the day window moves to Dropped.</li>
+</ul>
+<h3 id="rs-pace">Pace</h3>
+<div style="overflow-x:auto"><table>
+<tr><th>Pace</th><th>Break</th><th>Walking</th><th>Meals</th><th>Queue allowance</th></tr>
+<tr><td>Casual</td><td>25 min after every 2 activities</td><td>Slowest (×1.4, +3 min per walk)</td><td>60 min</td><td>×1.15</td></tr>
+<tr><td>Balanced</td><td>20 min after every 3</td><td>Normal (×1.15, +2 min)</td><td>45 min</td><td>×1.0</td></tr>
+<tr><td>Quick</td><td>10 min after every 6</td><td>Brisk (×1.0)</td><td>30 min</td><td>×0.9</td></tr>
+</table></div>
+<ul><li>Gaps before a fixed time become a break first, then free time.</li><li>Break length: Casual 25, Balanced 20, Quick 10 minutes. Free time after a break is capped at 90, 45 or 15 minutes.</li></ul>
+<h3 id="rs-window">Day window and gates</h3>
+<h4>Day window</h4>
+<ul><li>Start: rope drop (arrival time) or any half hour from 6:00 AM to 8:00 PM.</li><li>End: park close, mid-afternoon, after the parade (about 4:00 PM), after dinner (7:30 PM), after the fireworks or last show, or a custom time.</li><li>Fixed items outside the window move to Dropped.</li></ul>
+<h4>Entry and exit gates</h4>
+<ul>
+<li><b>Disneyland Park:</b> Main Entrance, Tomorrowland Monorail station, Downtown Disney route (Pixar Pals walkway), and a backstage exit by Refreshment Corner (exit only).</li>
+<li><b>California Adventure:</b> Main Entrance, Downtown Disney route, Grand Californian gate (hotel guests).</li>
+<li>The entry gate sets the starting area. The exit gate adds a counted walk, which must fit before the end time.</li>
+<li>Gates that open only around fireworks, night parades or Fantasmic are labelled as such. The Downtown Disney security route and the backstage exit are flagged as user-reported or unconfirmed.</li>
+</ul>
+<h3 id="rs-route">Routing</h3>
+<ul>
+<li>The next activity is the one with the lowest score: walking distance, then priority, popularity, time-of-day advice and strategy penalties.</li>
+<li>Walking time is the distance between areas × the pace factor, plus a fixed amount per walk.</li>
+<li>The route is retried up to five times to avoid returning to an area already visited, unless a fixed time forces it. The plan reports return visits.</li>
+<li>Activities are fitted around fixed times only if they finish, walk included, before the next one.</li>
+<li>A ride that has a Lightning Lane booking later is not also queued earlier.</li>
+</ul>
+<h3 id="rs-park">Park route rules</h3>
+<h4>Disneyland Park</h4>
+<ul>
+<li>Fantasyland is kept out of the busy midday window (10:30 AM to 4:00 PM) and favoured late. Parade spots there are exempt.</li>
+<li>Rise of the Resistance is not the first ride of the day (avoided before 9:30 AM) and is favoured from 7:00 to 9:00 PM.</li>
+<li>Tomorrowland is slightly avoided before noon and favoured from 5:30 PM. Galaxy's Edge is avoided before 9:00 AM and favoured from 7:00 to 9:00 PM.</li>
+<li>New Orleans Square, Frontierland and Critter Country are favoured before 12:30 PM.</li>
+</ul>
+<h4>California Adventure</h4>
+<ul>
+<li>Avengers Campus is done early, before its character shows finish (about 4:30 PM).</li>
+<li>Pixar Pier and Grizzly Peak are favoured in the late morning (9:00 or 9:30 to 11:30 AM).</li>
+<li>Cars Land is favoured from 5:00 PM, when its neon lights are on.</li>
+</ul>
+<h4>Both parks</h4>
+<ul>
+<li>Headline rides (popularity 4 or 5) are favoured before 10:00 AM and after 7:30 PM, and avoided from noon to 5:00 PM.</li>
+<li>Low-popularity rides (popularity 2 or less) are favoured from 1:00 to 5:00 PM and avoided before 10:00 AM.</li>
+</ul>
+<p class="hint">Route checks are shown on each suggested plan as pass or fail. Sources: Disney Tourist Blog one-day plans and forum advice.</p>
+<h3 id="rs-queue">Queues and crowds</h3>
+<ul>
+<li>Queue allowance by popularity (1 to 5): 5, 10, 20, 35 and 45 minutes. Shows allow 15 minutes. Dining and fixed items allow none.</li>
+<li>Then scaled by time of day: ×0.7 before 9:00 AM and after 8:30 PM (Lighter), ×1.0 from 9:00 to 11:30 AM and 3:30 to 6:00 PM (Busy), ×1.2 from 11:30 AM to 3:30 PM (Busiest), ×0.9 from 6:00 to 8:30 PM (Easing).</li>
+<li>Then scaled by the day's <b>crowd forecast</b>: Busy ×1.0, Very Busy ×1.15 (Light ×0.8, Moderate ×0.9). The forecast is Sun 22 Busy; Mon 23, Wed 25 and Thu 26 Very Busy. A date without a forecast uses ×1.0.</li>
+<li>Then scaled by pace (see above).</li>
+<li>Haunted Mansion Holiday and it's a small world Holiday run ×1.2 for Lightning Lane scoring.</li>
+<li>These are planning estimates. Live waits (Queue-Times.com) are informational only and never change the plan.</li>
+</ul>
+<h3 id="rs-meals">Meals and rest</h3>
+<ul>
+<li>Lunch is planned around 12:15 PM and dinner around 5:45 PM, unless a reservation or meal within 2.5 hours already covers it. Dinner is skipped if the day ends before 7:10 PM.</li>
+<li>A selected dining item takes a meal slot. With no dining selected, the slot becomes a labelled break.</li>
+<li>Meal slots outside the day window are skipped.</li>
+<li>A break is added after the pace's number of activities. Gaps before fixed items become a break, then free time.</li>
+<li>Long breaks show food and browsing ideas for the area you are in.</li>
+</ul>
+<h3 id="rs-shows">Shows and the parade</h3>
+<ul>
+<li>Shows are arrival-timed: you arrive 15 minutes early by default. Default times if none is recorded: parade 3:15 PM, Fantasmic 9:00 PM, Wintertime Enchantment 8:30 PM, fireworks and Believe 9:30 PM, World of Color 9:00 PM.</li>
+<li>The Christmas Fantasy Parade runs 3:15 PM and 5:30 PM, about 40 minutes, with a 25-minute viewing allowance.</li>
+<li><b>Parade spot</b> choices, by land along the route: Frontierland (user-reported start, unconfirmed), it's a small world (45 min lead), Alice in Wonderland (45), the hub (45), mid Main Street (60), Town Square by the Fire Station (20).</li>
+<li>The plan walks to the chosen spot's area and holds the lead time. If fixed times leave less, the card and schedule show the shortfall.</li>
+</ul>
+<h3 id="rs-prio">Priorities and dropped items</h3>
+<ul>
+<li>Each person marks an item as wanted or priority. Priority counts more in ordering.</li>
+<li>If a priority item does not fit, the lowest-popularity ordinary item is removed to make room, up to eight swaps.</li>
+<li>Anything left out is listed under Dropped, with the reason and a place it could fit: another lighter day, a break to swap, or a quicker pace.</li>
+<li>The coverage check shows which selected items are planned on which day, and which are missing.</li>
+</ul>
+<h3 id="rs-ll">Lightning Lane strategies</h3>
+<p>Chosen per day and per park.</p>
+<h4>Standard</h4>
+<ul><li>Book the first Lightning Lane at the gate. Book each next one when you tap into the last, or 2 hours after booking, whichever is sooner. Redeem through the day.</li></ul>
+<h4>Stacking</h4>
+<ul>
+<li>Use the 2-hour rule to book again and again, choosing or modifying each booking to an early-evening return time.</li>
+<li>Stacked slots start at 5:00 PM, are ordered by shortest walk, avoid other fixed times and must end before the day ends.</li>
+<li>Number stacked = one per 2 hours between your start and the switch time, plus one.</li>
+<li><b>Switch to book and redeem</b> time is selectable: 9:00 AM to 2:00 PM, default 12:00 PM. After it, bookings are redeemed normally and return before the stacked evening slots.</li>
+<li>The plan produces booking prompts with times, and states the extra walking or rest against Standard.</li>
+</ul>
+<h4>Optional extras (any combination, either strategy)</h4>
+<ul>
+<li><b>Right side first (Disneyland only):</b> enter at the Main Entrance, do Tomorrowland, Mickey's Toontown and Fantasyland first as standby with no Lightning Lane. Left-side rides before 11:30 AM are penalised. The left side keeps the chosen strategy.</li>
+<li><b>Tier order:</b> see the next section. Not offered as right-side for California Adventure, as no source splits that park into sides.</li>
+</ul>
+<p class="hint">Evening slots are not always available, so check the Disneyland app.</p>
+<h3 id="rs-tiers">Tiers</h3>
+<ul>
+<li><b>Standard + tiers:</b> the Lightning Lane slots you already have are reassigned by tier (Tier 1 earliest). Tier 3 bookings are made at least 2 hours before their return. Reverted if overlap grows by more than 10 minutes.</li>
+<li><b>Stacking + tiers:</b> Tier 1 then Tier 2 are stacked. Tier 3 is not.</li>
+<li>Rides not listed count as Tier 2.</li>
+</ul>
+<div style="overflow-x:auto"><table>
+<tr><th>Tier</th><th>Disneyland Park (your guide)</th><th>California Adventure (Disney Tourist Blog)</th></tr>
+<tr><td><b>1</b> Book first</td><td>Indiana Jones, Space Mountain, Runaway Railway, Big Thunder</td><td>Guardians, Toy Story Midway Mania, WEB Slingers, Soarin'</td></tr>
+<tr><td><b>2</b> Plan ahead</td><td>Haunted Mansion, Tiana's, Matterhorn, Roger Rabbit, Smugglers Run, Millennium Falcon</td><td>Goofy's Sky School, Incredicoaster, Grizzly River Run</td></tr>
+<tr><td><b>3</b> No rush</td><td>Star Tours, it's a small world, Buzz Lightyear, Autopia</td><td>Monsters, Inc., Little Mermaid</td></tr>
+</table></div>
+<h3 id="rs-slots">Choosing a return slot</h3>
+<p>For each booking the planner tests return times within 2 hours of the plan time, every 15 minutes (not before 9:00 AM), and picks the lowest cost. It keeps the plan time if it is within 15 minutes of the best.</p>
+<ul>
+<li><b>Lower cost:</b> shorter expected standby that time of day, shorter walk added, no clash with fixed times (a 20-point penalty).</li>
+<li><b>Slightly favours</b> staying near the planned time.</li>
+<li><b>Busier forecast day:</b> a Lightning Lane saves more, and the note says so.</li>
+<li><b>Ride advice:</b></li>
+</ul>
+<ul>
+<li>Tiana's: warmer middle of the day.</li>
+<li>Space Mountain, Indiana Jones, Big Thunder: early, as return times slip fastest.</li>
+<li>Matterhorn: afternoon or evening.</li>
+<li>Buzz Lightyear: mid-afternoon (walk-on in the last hour).</li>
+<li>Runaway Railway: later, since standby is easy early.</li>
+<li>Smugglers Run, Millennium Falcon: earlier, since Galaxy's Edge is quiet late.</li>
+<li>Roger Rabbit: before Toontown closes.</li>
+<li>Haunted Mansion Holiday: earlier, as the overlay is more competitive.</li>
+</ul>
+<p class="hint">A suggested slot never changes your plan on its own. Use the Time button on the block to adopt it. Rides with a Single Rider line are not stacked.</p>
+<h3 id="rs-sync">Versions and syncing</h3>
+<ul>
+<li>A day can have an original plus versions (Casual, Balanced, Quick). The original is never changed by a pace.</li>
+<li>Changing a selection, gate, parade spot, window, strategy or reservation rebuilds the current version. On an original day it also rebuilds all its versions, each keeping its own pace and Modify changes.</li>
+<li>Versions are built from the original day's real bookings, never from their own previous output.</li>
+<li>One version per day can be starred as <b>Preferred</b>. It opens first and leads on the dashboard.</li>
+<li><b>Refresh all versions</b> rebuilds every saved version from your current choices.</li>
+</ul>
+<h3 id="rs-replan">Re-plan and live data</h3>
+<ul>
+<li><b>Re-plan the rest of the day</b> proposes changes and applies them only when you accept.</li>
+<li>Closed rides get a backup that adds the least walking. Running late pushes later blocks back. Show, reservation and hard-stop blocks never move.</li>
+<li>If the shift would pass a fixed block, optional rest or standby blocks are flagged Skip if short on time.</li>
+<li>A redeem block never starts before its return window opens, and warns if it would land after it closes.</li>
+<li>Nothing is deleted. Undo reverses the last re-plan.</li>
+<li><b>Live waits</b> (Queue-Times.com): data older than 30 minutes is marked stale. Waits of 60 minutes or more, or closures, produce a heads-up only.</li>
+<li><b>Weather</b> is shown per day for reference and does not change the plan.</li>
+</ul>
+<h3 id="rs-limits">Limits</h3>
+<ul>
+<li>Distances and walking times come from a schematic map, not real measurements.</li>
+<li>Queue times are typical patterns scaled by the forecast, not measured averages.</li>
+<li>The app cannot book, change or see Lightning Lane availability, and does not know which rides are open except from the live feed.</li>
+<li>Unconfirmed items: the parade starting in Frontierland, the Downtown Disney security route details, and the Disneyland Park Tier list's source (your supplied guide).</li>
+</ul>
 </template>
 <script>
 var Z={dl:[["Fantasyland",270,200,210,150,"#e9d9ee"],["Toontown",480,110,120,120,"#f9e3c7"],["Tomorrowland",470,320,170,150,"#d3e3f5"],["Adventureland",190,360,140,90,"#e1ecc9"],["New Orleans Sq.",100,300,95,90,"#f2d4d4"],["Frontierland",170,205,100,100,"#efdcc0"],["Bayou Country",15,320,100,125,"#d3ead9"],["Galaxy’s Edge",90,95,150,110,"#d8d6dd"],["Main Street",315,420,70,150,"#f4e8c8"]],
@@ -1249,7 +1427,7 @@ function plRK(r){var n=boldNames(r.tx||"").map(function(x){return x.toLowerCase(
 function plSyncRow(d,r){var k=plRK(r);if(!k)return;plGroupOf(d).forEach(function(s){if(s===d)return;s.blocks.forEach(function(b){b.rows.forEach(function(q){if(plRK(q)==k){q.st=r.st;if(r.lt)q.lt=JSON.parse(JSON.stringify(r.lt));else delete q.lt}})})})}
 function plSyncAll(){var ch=false;S.days.forEach(function(d){var g=plGroupOf(d);if(g.length<2||g[0]!==d)return;var m={};g.forEach(function(s){s.blocks.forEach(function(b){b.rows.forEach(function(r){var k=plRK(r);if(!k)return;var e=m[k]=m[k]||{st:"",lt:null};if(r.st&&!e.st)e.st=r.st;if(r.lt&&(r.lt.bk||r.lt.win||r.lt.tap)&&!e.lt)e.lt=r.lt})})});
   g.forEach(function(s){s.blocks.forEach(function(b){b.rows.forEach(function(r){var k=plRK(r);if(!k)return;var e=m[k];if(e.st&&!r.st){r.st=e.st;ch=true}if(e.lt&&!(r.lt&&(r.lt.bk||r.lt.win||r.lt.tap))){r.lt=JSON.parse(JSON.stringify(e.lt));ch=true}})})})});return ch}
-function llRec(d,x){var p=d.p,it=plFind(p,x.name);if(!it||x.sg==null||x.pb==null)return null;var T=x.sg,dt=dDate(d),dayF={22:1,23:1.1,25:1.07,26:1.08}[dt?dt.d:0]||1,nm=it.n,hol=/haunted mansion|small world/i.test(nm)?1.2:1;
+function llRec(d,x){var p=d.p,it=plFind(p,x.name);if(!it||x.sg==null||x.pb==null)return null;var T=x.sg,dt=dDate(d),dayF=plCrowd(d).f,nm=it.n,hol=/haunted mansion|small world/i.test(nm)?1.2:1;
  var ev=[];d.blocks.forEach(function(b){var t=t2m(b.tm);b.rows.forEach(function(r){if(r.g!="RIDE"&&r.g!="SHOW"&&r.g!="DINE")return;boldNames(r.tx).forEach(function(n){var y=plFind(p,n);if(!y||t==null)return;if(r===x.rowRedeem||(y.id==it.id&&/redeem/i.test(r.tx)))return;ev.push({t:t,a:y.a,fx:/redeem/i.test(r.tx)||r.g!="RIDE"})})})});ev.sort(function(a,b){return a.t-b.t});
  var D=PDIST[p],wk=function(a,b){return a==b?0:Math.round(D[a][b]*1.15)+2};
  function pref(h){var q=0,w=[];if(/tiana/i.test(nm)&&(h<660||h>=1110)){q+=12;w.push("Tiana's is best ridden in the warmer middle of the day")}
@@ -1261,7 +1439,7 @@ function llRec(d,x){var p=d.p,it=plFind(p,x.name);if(!it||x.sg==null||x.pb==null
   if(/roger rabbit/i.test(nm)&&h>1080){q+=15;w.push("Toontown closes early")}
   if(/haunted mansion/i.test(nm)&&h>1020){q+=6;w.push("the holiday overlay makes the Mansion more competitive, so book and ride it earlier")}
   return{q:q,w:w}}
- function cost(h){var wt=plQ(it,h,{q:1})*dayF*hol,pr=pref(h),pv=null,nx=null;ev.forEach(function(e){if(e.t<=h)pv=e;else if(!nx)nx=e});
+ function cost(h){var wt=plQ(it,h,{q:1,cf:1})*dayF*hol,pr=pref(h),pv=null,nx=null;ev.forEach(function(e){if(e.t<=h)pv=e;else if(!nx)nx=e});
   var det=pv&&nx?wk(pv.a,it.a)+wk(it.a,nx.a)-wk(pv.a,nx.a):pv?wk(pv.a,it.a):nx?wk(it.a,nx.a):0,cf=0;ev.forEach(function(e){if(e.fx&&Math.abs(e.t-h)<(it.m+8))cf+=20});
   var lc=/star tours|autopia/i.test(nm)?.6:1;return{c:-wt*lc+det*1.5+pr.q+cf+.08*Math.abs(h-T),wt:Math.round(wt),det:det,pr:pr}}
  var best=null,lo=Math.max(x.pb+10,540,T-120),hi=Math.min(1230,T+120);for(var h=lo;h<=hi;h+=15){var c=cost(h);if(!best||c.c<best.c.c-.001)best={h:h,c:c}}
@@ -1310,6 +1488,20 @@ var PDIST={};
 function plMatch(it,name){var n=String(name);for(var i=0;i<it.al.length;i++){try{if(new RegExp(it.al[i],"i").test(n))return true}catch(e){}}return lnorm(n)==it.id||lmatch(n,it.n)}
 function plFind(p,name){var r=null;PCAT.forEach(function(it){if(!r&&it.p==p&&plMatch(it,name))r=it});return r}
 function plRes(d,id){return S.pl&&S.pl.rs&&S.pl.rs[d.tab+"|"+id]||""}
+function plSrc(d){if(d&&d.pc&&d.base){for(var i=0;i<S.days.length;i++){var y=S.days[i];if(!y.pc&&y.tab==d.base&&y.p==d.p)return y}}return d}
+function plResAny(d,id){var r=plRes(d,id);if(r)return r;var bs=d.base||d.tab;for(var i=0;i<S.days.length;i++){var y=S.days[i];if(y!==d&&(y.tab==bs||y.base==bs)){r=plRes(y,id);if(r)return r}}return""}
+function plRebuild(v){if(!v||!v.pc||!plChosen(v).length)return false;var pk=plPace(v),sc=plSched(v,pk),bl=plBlocksFrom(v,sc),W=plWin(v),same=JSON.stringify(v.blocks)==JSON.stringify(bl)&&v.vp==PACE[pk].n;v.blocks=bl;v.vp=PACE[pk].n;v.arr=plArrApply(v.arr,W.s,W.e);return !same}
+function plVersOf(d){return S.days.filter(function(y){return y.pc&&y.base==d.tab})}
+function plSyncDone(d,list){var ch=list.filter(function(v){return v.ch}).map(function(v){return v.d.tab});if(S.prev&&ch.length)delete S.prev;
+ PUI.sync={di:S.days.indexOf(d),txt:ch.length?"Updated "+ch.join(", ")+" to match your choices. The day plan and dashboard now use "+(ch.length>1?"them":"it")+".":(d.pc?d.tab+" already matched your choices.":(plVersOf(d).length?"The versions of "+d.tab+" already matched your choices.":"The suggested plan below is updated. Use Create new version to save it as a day plan."))}}
+function plSyncSel(d,sel0,why){var out=[];if(d.pc){out.push({d:d,ch:plRebuild(d)})}
+ else{var a=JSON.parse(sel0||"{}"),b=plSel(d),ids={};Object.keys(a).concat(Object.keys(b)).forEach(function(i){ids[i]=1});
+  var delta=Object.keys(ids).filter(function(i){return JSON.stringify(a[i])!=JSON.stringify(b[i])});
+  if(delta.length||why=="fact")plVersOf(d).forEach(function(v){var vs=plSel(v);delta.forEach(function(i){if(b[i]===undefined)delete vs[i];else vs[i]=JSON.parse(JSON.stringify(b[i]))});out.push({d:v,ch:plRebuild(v)})})}
+ plSyncDone(d,out)}
+function plSyncSet(d,key){var out=[];if(d.pc)out.push({d:d,ch:plRebuild(d)});else plVersOf(d).forEach(function(v){S.pl[key]=S.pl[key]||{};if(S.pl[key][d.tab]!==undefined)S.pl[key][v.tab]=JSON.parse(JSON.stringify(S.pl[key][d.tab]));else delete S.pl[key][v.tab];out.push({d:v,ch:plRebuild(v)})});plSyncDone(d,out)}
+function plSyncNote(d){return plSyncNote0(d)+(S.days.some(function(y){return y.pc})?'<div class="pchips"><button class="ib" data-pl="rball">Refresh all versions from your current choices</button></div>':'')}
+function plSyncNote0(d){var z=PUI.sync;if(!z||z.di!=S.days.indexOf(d))return d.pc?'<p class="hint psync">Changes you make here update '+esc(d.tab)+' straight away, so its day plan and the dashboard follow. Your original day is never changed.</p>':(plVersOf(d).length?'<p class="hint psync">You are planning the original '+esc(d.tab)+'. Changes here also update its versions ('+plVersOf(d).map(function(v){return esc(v.tab)}).join(", ")+'), keeping each version\'s own pace and changes. The original day is never changed.</p>':'');return '<div class="pln psync" role="status"><span><b>'+esc(z.txt)+'</b></span></div>'}
 function plResFor(d,name){var it=plFind(d.p,name);return it?plRes(d,it.id):""}
 function plResNeed(r){return /reserv|dining package|voucher|table-service/i.test(r.tx||"")}
 function plDayItems(d){var out=[];d.blocks.forEach(function(b,bi){b.rows.forEach(function(r,ri){if(r.g!="RIDE"&&r.g!="SHOW"&&r.g!="DINE")return;var nm=boldNames(r.tx);var who=/DP\s*Only/i.test(r.tx)?"d":/GP\s*Only/i.test(r.tx)?"g":"b";nm.forEach(function(x){var it=plFind(d.p,x);if(it)out.push({it:it,who:who,bi:bi,ri:ri,multi:nm.length>1})})})});return out}
@@ -1469,10 +1661,10 @@ function plCovHTML(){var C=plCov(),h='<div class="ps pcv2"><h3>Coverage check</h
 function plView(){plPeople();if(PUI.di>=S.days.length)PUI.di=0;var d=S.days[PUI.di];
  var h='<div class="plan"><h2>Planner</h2><p class="hint">Choose what each person wants to do, across all days and both parks.</p>'+plPeopleHTML()+'<div class="pseg">'+[["mx","Activity selections"],["sug","Suggested day plans"],["cov","Coverage check"]].map(function(m){return '<button class="'+(PUI.mode==m[0]?'on':'')+'" data-pl="m" data-v="'+m[0]+'">'+m[1]+'</button>'}).join("")+'</div>';
  if(PUI.mode!="cov")h+=plUnpHTML();h+='<div class="padd"><button class="ib" data-pl="ad">'+(PUI.add?'Cancel':'+ Add day')+'</button>'+(PUI.add?'<div class="pae"><input id="pdn" aria-label="Day name" placeholder="Day name, e.g. Tue Nov 24" maxlength="20" value="'+esc(PUI.dn||"")+'"><select id="pld" aria-label="Park"><option value="dl"'+(PUI.dp!="ca"?" selected":"")+'>Disneyland Park</option><option value="ca"'+(PUI.dp=="ca"?" selected":"")+'>California Adventure</option></select><button class="ib pri" data-pl="adok">Add day</button>'+(PUI.err?'<p class="hint err">'+esc(PUI.err)+'</p>':'')+'</div>':'')+'</div>';
- if(PUI.mode=="sug")h+=''+plCal()+plModHTML(d)+plWinHTML(d)+plGateHTML(d)+plParadeHTML(d)+plPaceHTML(d)+plSuggest(d);else if(PUI.mode=="cov")h+=plCovHTML();else h+=plMatrix();
+ if(PUI.mode=="sug")h+=''+plCal()+plSyncNote(d)+refMap(d)+plCrowdLine(d)+plModHTML(d)+plWinHTML(d)+plGateHTML(d)+plParadeHTML(d)+plLLHTML(d)+plPaceHTML(d)+plSuggest(d);else if(PUI.mode=="cov")h+=plCovHTML();else h+=plMatrix();
  el("view").innerHTML=h+'</div>';}
-document.addEventListener("change",function(e){var t=e.target;if(t&&t.dataset&&t.dataset.spot&&cur==-3){var dp=S.days[PUI.di];S.pl=S.pl||{};S.pl.pspot=S.pl.pspot||{};var pm=S.pl.pspot[dp.tab]=S.pl.pspot[dp.tab]||{};if(t.value)pm[t.dataset.spot]=t.value;else delete pm[t.dataset.spot];if(!Object.keys(pm).length)delete S.pl.pspot[dp.tab];save();plView();return}if(t&&t.dataset&&t.dataset.gate&&cur==-3){var dg=S.days[PUI.di];S.pl=S.pl||{};S.pl.gate=S.pl.gate||{};var gg=S.pl.gate[dg.tab]=S.pl.gate[dg.tab]||{};if(t.value)gg[t.dataset.gate]=t.value;else delete gg[t.dataset.gate];if(!gg.i&&!gg.o)delete S.pl.gate[dg.tab];save();plView();return}if(t&&t.dataset&&t.dataset.win&&cur==-3){var dw=S.days[PUI.di];S.pl=S.pl||{};S.pl.win=S.pl.win||{};var ww=S.pl.win[dw.tab]=S.pl.win[dw.tab]||{},vv=t.value;if(t.dataset.win=="st"||t.dataset.win=="et"){var tm0=t2m(vv);if(tm0!=null&&/\d/.test(vv))vv=fmt(tm0)}ww[t.dataset.win]=vv;save();plView();return}if(t&&t.id=="plq"&&cur==-3){PUI.q=t.value;plView();return}if(t&&t.id=="psd"&&cur==-3){PUI.di=+t.value;plView();return}if(t&&t.id=="pld"&&cur==-3){PUI.dp=t.value;return}if(t&&t.id=="pdn"&&cur==-3){PUI.dn=t.value;return}if(t&&t.dataset&&t.dataset.pi!=null&&cur==-3){var a=plPeople()[+t.dataset.pi];if(a){a[t.dataset.pf]=t.value.trim()||a[t.dataset.pf];save();plView();var i=document.querySelector('[data-pi="'+t.dataset.pi+'"][data-pf="'+t.dataset.pf+'"]');if(i)i.focus()}}});
-document.addEventListener("click",function(e){var b=cur==-3&&e.target.closest&&e.target.closest("[data-pl]");if(!b)return;e.stopPropagation();e.preventDefault();var k=b.dataset.pl,v=b.dataset.v,id=b.dataset.id,d=S.days[PUI.di],ch=false;
+document.addEventListener("change",function(e){var t=e.target;if(t&&t.dataset&&(t.dataset.llst!==undefined||t.dataset.llmod||t.dataset.llsw!==undefined)&&cur==-3){var dq=S.days[PUI.di];S.pl=S.pl||{};S.pl.llst=S.pl.llst||{};var lo=plLLo(dq),nv={m:lo.m,rs:lo.rs,tier:lo.tier,sw:lo.sw};if(t.dataset.llsw!==undefined)nv.sw=+t.value;else if(t.dataset.llmod)nv[t.dataset.llmod]=t.checked?1:0;else nv.m=t.value=="stack"?"stack":"std";if(nv.m=="std"&&!nv.rs&&!nv.tier)delete S.pl.llst[dq.tab];else S.pl.llst[dq.tab]=nv;plSyncSet(dq,"llst");save();plView();return}if(t&&t.dataset&&t.dataset.spot&&cur==-3){var dp=S.days[PUI.di];S.pl=S.pl||{};S.pl.pspot=S.pl.pspot||{};var pm=S.pl.pspot[dp.tab]=S.pl.pspot[dp.tab]||{};if(t.value)pm[t.dataset.spot]=t.value;else delete pm[t.dataset.spot];if(!Object.keys(pm).length)delete S.pl.pspot[dp.tab];plSyncSet(dp,"pspot");save();plView();return}if(t&&t.dataset&&t.dataset.gate&&cur==-3){var dg=S.days[PUI.di];S.pl=S.pl||{};S.pl.gate=S.pl.gate||{};var gg=S.pl.gate[dg.tab]=S.pl.gate[dg.tab]||{};if(t.value)gg[t.dataset.gate]=t.value;else delete gg[t.dataset.gate];if(!gg.i&&!gg.o)delete S.pl.gate[dg.tab];plSyncSet(dg,"gate");save();plView();return}if(t&&t.dataset&&t.dataset.win&&cur==-3){var dw=S.days[PUI.di];S.pl=S.pl||{};S.pl.win=S.pl.win||{};var ww=S.pl.win[dw.tab]=S.pl.win[dw.tab]||{},vv=t.value;if(t.dataset.win=="st"||t.dataset.win=="et"){var tm0=t2m(vv);if(tm0!=null&&/\d/.test(vv))vv=fmt(tm0)}ww[t.dataset.win]=vv;plSyncSet(dw,"win");save();plView();return}if(t&&t.id=="plq"&&cur==-3){PUI.q=t.value;plView();return}if(t&&t.id=="psd"&&cur==-3){PUI.di=+t.value;plView();return}if(t&&t.id=="pld"&&cur==-3){PUI.dp=t.value;return}if(t&&t.id=="pdn"&&cur==-3){PUI.dn=t.value;return}if(t&&t.dataset&&t.dataset.pi!=null&&cur==-3){var a=plPeople()[+t.dataset.pi];if(a){a[t.dataset.pf]=t.value.trim()||a[t.dataset.pf];save();plView();var i=document.querySelector('[data-pi="'+t.dataset.pi+'"][data-pf="'+t.dataset.pf+'"]');if(i)i.focus()}}});
+document.addEventListener("click",function(e){var b=cur==-3&&e.target.closest&&e.target.closest("[data-pl]");if(!b)return;e.stopPropagation();e.preventDefault();var k=b.dataset.pl,v=b.dataset.v,id=b.dataset.id,d=S.days[PUI.di],ch=false,d00=d,sel00=JSON.stringify(plSel(d));
  if(k=="m"){if(v=="sug"&&PUI.mode!="sug")PUI.di=plPrefIdx(PUI.di);PUI.mode=v;d=S.days[PUI.di]}else if(k=="cal"){PUI.upm=null;PUI.vm=null;PUI.vun=null;PUI.di=+v;PUI.rm=null;PUI.rerr="";d=S.days[PUI.di]}else if(k=="cell"){PUI.rerr="";if(PUI.sel==id&&PUI.di==+v)PUI.sel=null;else{PUI.sel=id;PUI.di=+v;PUI.rm=null}d=S.days[PUI.di]}else if(k=="x")PUI.sel=null;else if(k=="pk")PUI.pk=v;else if(k=="f")PUI.f=v;else if(k=="so")PUI.so=!PUI.so;else if(k=="ppl")PUI.ppl=!PUI.ppl;
  else if(k=="c"){var m=plSel(d),x=plVals(d,id);x[+v]=(x[+v]+1)%3;m[id]=x;ch=true}
  else if(k=="acc"||k=="rej"){var pk3=plPace(d);S.pl.acc=S.pl.acc||{};S.pl.rej=S.pl.rej||{};var ky=d.tab+"|"+pk3;if(k=="acc"){(S.pl.acc[ky]=S.pl.acc[ky]||[]).push({id:id,t:+b.dataset.t})}else{(S.pl.rej[ky]=S.pl.rej[ky]||[]).push(id+"@"+b.dataset.t)}ch=true}
@@ -1482,7 +1674,7 @@ document.addEventListener("click",function(e){var b=cur==-3&&e.target.closest&&e
  else if(k=="unrej"){var ky3=d.tab+"|"+plPace(d);if(S.pl.rej)S.pl.rej[ky3]=[];ch=true}
  else if(k=="pace"){S.pl.pace=S.pl.pace||{};S.pl.pace[d.tab]=v;ch=true}
  else if(k=="mkpace"){var pk=plPace(d),sc=plSched(d,pk),bs=d.base||d.tab,nm=bs+" "+PACE[pk].n,n=2;while(S.days.some(function(y){return y.tab==nm}))nm=bs+" "+PACE[pk].n+" "+n++;
-  var nd={tab:nm,p:d.p,title:d.title,focus:d.focus,arr:d.arr,extra:d.extra,pc:1,base:(d.base||d.tab),ver:S.days.filter(function(y){return (y.base||y.tab)==(d.base||d.tab)}).length+1,vp:PACE[pk].n,blocks:plBlocksFrom(d,sc)};S.pl.d[nm]=JSON.parse(JSON.stringify(plSel(d)));(function(){var W0=plWin(d);if(S.pl.win&&S.pl.win[d.tab])S.pl.win[nm]=JSON.parse(JSON.stringify(S.pl.win[d.tab]));if(S.pl.gate&&S.pl.gate[d.tab]){S.pl.gate[nm]=JSON.parse(JSON.stringify(S.pl.gate[d.tab]))}if(S.pl.pspot&&S.pl.pspot[d.tab]){S.pl.pspot[nm]=JSON.parse(JSON.stringify(S.pl.pspot[d.tab]))}nd.arr=plArrApply(nd.arr,W0.s,W0.e)})();var ix=0;S.days.forEach(function(y,i){if((y.base||y.tab)==bs)ix=i+1});S.days.splice(ix,0,nd);S.pl.top=S.pl.top||{};S.pl.top[bs]=(S.pl.pref&&S.pl.pref[bs])||nm;PUI.di=ix;if(S.prev)delete S.prev;ch=true}
+  var nd={tab:nm,p:d.p,title:d.title,focus:d.focus,arr:d.arr,extra:d.extra,pc:1,base:(d.base||d.tab),ver:S.days.filter(function(y){return (y.base||y.tab)==(d.base||d.tab)}).length+1,vp:PACE[pk].n,blocks:plBlocksFrom(d,sc)};S.pl.d[nm]=JSON.parse(JSON.stringify(plSel(d)));(function(){var W0=plWin(d);if(S.pl.win&&S.pl.win[d.tab])S.pl.win[nm]=JSON.parse(JSON.stringify(S.pl.win[d.tab]));if(S.pl.gate&&S.pl.gate[d.tab]){S.pl.gate[nm]=JSON.parse(JSON.stringify(S.pl.gate[d.tab]))}if(S.pl.pspot&&S.pl.pspot[d.tab]){S.pl.pspot[nm]=JSON.parse(JSON.stringify(S.pl.pspot[d.tab]))}if(S.pl.llst&&S.pl.llst[d.tab]){S.pl.llst=S.pl.llst||{};S.pl.llst[nm]=JSON.parse(JSON.stringify(S.pl.llst[d.tab]))}nd.arr=plArrApply(nd.arr,W0.s,W0.e)})();var ix=0;S.days.forEach(function(y,i){if((y.base||y.tab)==bs)ix=i+1});S.days.splice(ix,0,nd);S.pl.top=S.pl.top||{};S.pl.top[bs]=(S.pl.pref&&S.pl.pref[bs])||nm;PUI.di=ix;if(S.prev)delete S.prev;ch=true}
  else if(k=="vrm"||k=="vadd"||k=="vundo"){var vi=PUI.di,vd=S.days[vi];if(vd&&vd.pc){
   if(k=="vundo"){var u=PUI.vun;if(u&&u.i==vi){vd.blocks=JSON.parse(u.blocks);S.pl.d[vd.tab]=JSON.parse(u.sel);vd.arr=u.arr;vd.vp=u.vp;PUI.vun=null;PUI.vm={i:vi,txt:'Undone.'};ch=true}}
   else{var vid=k=="vadd"&&!id?(document.getElementById("pvadd")||{}).value:id,vit=PITEM[vid];if(vit){var sn=plSnap(vi),vs=plSel(vd);
@@ -1494,9 +1686,10 @@ document.addEventListener("click",function(e){var b=cur==-3&&e.target.closest&&e
  else if(k=="cadd"){PUI.cm=plAddTo(+v,id);ch=true}
  else if(k=="cnw"){if(PUI.rm=="cnw"+id){var cit=PITEM[id];S.days.forEach(function(y){if(cit&&y.p==cit.p&&S.pl.d[y.tab])delete S.pl.d[y.tab][id]});PUI.rm=null;PUI.cm=(cit?cit.n:'It')+' was removed from your selections.';ch=true}else PUI.rm="cnw"+id}
  else if(k=="goday"){cur=+v;sel={b:0,r:0};PUI.upm=null;render();window.scrollTo(0,0);return}
- else if(k=="updv"){var ti=+v,tx=S.days[ti];if(tx&&tx.pc){if(PUI.rm!="upd"+ti){PUI.rm="upd"+ti;PUI.upm=null}else{var pk9=plPace(d),sc9=plSched(d,pk9),bl9=plBlocksFrom(d,sc9),W9=plWin(d),arr9=tx.arr;if(tx!==d){S.pl.d[tx.tab]=JSON.parse(JSON.stringify(plSel(d)));S.pl.pace=S.pl.pace||{};S.pl.pace[tx.tab]=pk9;S.pl.win=S.pl.win||{};if(S.pl.win[d.tab])S.pl.win[tx.tab]=JSON.parse(JSON.stringify(S.pl.win[d.tab]));else delete S.pl.win[tx.tab];S.pl.gate=S.pl.gate||{};if(S.pl.gate[d.tab])S.pl.gate[tx.tab]=JSON.parse(JSON.stringify(S.pl.gate[d.tab]));else delete S.pl.gate[tx.tab];S.pl.pspot=S.pl.pspot||{};if(S.pl.pspot[d.tab])S.pl.pspot[tx.tab]=JSON.parse(JSON.stringify(S.pl.pspot[d.tab]));else delete S.pl.pspot[tx.tab]}
+ else if(k=="updv"){var ti=+v,tx=S.days[ti];if(tx&&tx.pc){if(PUI.rm!="upd"+ti){PUI.rm="upd"+ti;PUI.upm=null}else{var pk9=plPace(d),sc9=plSched(d,pk9),bl9=plBlocksFrom(d,sc9),W9=plWin(d),arr9=tx.arr;if(tx!==d){S.pl.d[tx.tab]=JSON.parse(JSON.stringify(plSel(d)));S.pl.pace=S.pl.pace||{};S.pl.pace[tx.tab]=pk9;S.pl.win=S.pl.win||{};if(S.pl.win[d.tab])S.pl.win[tx.tab]=JSON.parse(JSON.stringify(S.pl.win[d.tab]));else delete S.pl.win[tx.tab];S.pl.gate=S.pl.gate||{};if(S.pl.gate[d.tab])S.pl.gate[tx.tab]=JSON.parse(JSON.stringify(S.pl.gate[d.tab]));else delete S.pl.gate[tx.tab];S.pl.pspot=S.pl.pspot||{};if(S.pl.pspot[d.tab])S.pl.pspot[tx.tab]=JSON.parse(JSON.stringify(S.pl.pspot[d.tab]));else delete S.pl.pspot[tx.tab];S.pl.llst=S.pl.llst||{};if(S.pl.llst[d.tab])S.pl.llst[tx.tab]=JSON.parse(JSON.stringify(S.pl.llst[d.tab]));else delete S.pl.llst[tx.tab]}
   arr9=plArrApply(arr9,W9.s,W9.e);
   var same9=JSON.stringify(tx.blocks)==JSON.stringify(bl9)&&tx.vp==PACE[pk9].n;tx.blocks=bl9;tx.vp=PACE[pk9].n;tx.arr=arr9;PUI.rm=null;PUI.upm={i:ti,txt:same9?'No change: '+tx.tab+' already matches this plan ('+PACE[pk9].n+' pace, '+bl9.length+' time blocks, starting '+(bl9[0]?bl9[0].tm:'')+').':'Updated '+tx.tab+': '+PACE[pk9].n+' pace, '+bl9.length+' time blocks, starting '+(bl9[0]?bl9[0].tm:'')+'.'};if(S.prev)delete S.prev;ch=true}}}
+ else if(k=="rball"){var out=[];S.days.forEach(function(y){if(y.pc)out.push({d:y,ch:plRebuild(y)})});plSyncDone(d,out);if(!out.some(function(z){return z.ch}))PUI.sync.txt="All versions already match your current choices.";ch=true}
  else if(k=="unp"){PUI.unp=!PUI.unp}
  else if(k=="upl"){var ud=S.days[+v];if(ud&&PITEM[id]){plSel(ud)[id]=plPeople().map(function(){return 1});plAddRow(+v,id);ch=true}}
  else if(k=="sel"){var m2=plSel(d);m2[id]=plPeople().map(function(){return 1});ch=true}
@@ -1508,6 +1701,7 @@ document.addEventListener("click",function(e){var b=cur==-3&&e.target.closest&&e
   else if(k=="ad"){PUI.add=!PUI.add}
  else if(k=="adok"){var nm=(document.getElementById("pdn").value||"").trim(),pk=document.getElementById("pld").value||"dl";if(!nm)PUI.err="Enter a day name, for example Tue Nov 24.";else if(S.days.some(function(x){return x.tab.toLowerCase()==nm.toLowerCase()}))PUI.err="That day already exists.";else{S.days.push({tab:nm,p:pk,title:nm+" \u2013 "+(pk=="ca"?"Disney California Adventure":"Disneyland Park"),focus:"",arr:"",extra:"",blocks:[]});PUI.di=S.days.length-1;PUI.add=false;PUI.err="";PUI.dn="";PUI.q="";PUI.mode="mx";ch=true}}
  else if(k=="dday"){var dd=S.days[+v];if(dd&&(dd.pc||!dd.blocks.length)){if(PUI.rm=="day"+v){plDelDay(+v);PUI.di=0;PUI.rm=null;ch=true}else PUI.rm="day"+v}}
+ if(ch&&d00&&S.days.indexOf(d00)>=0){var SY={c:"sel",sel:"sel",add:"sel",rm:"sel",addall:"sel",rsv:"fact",rsc:"fact",pace:"own",acc:"own",rej:"own",unacc:"own",unrej:"own"}[k];if(SY){if(SY=="own"&&!d00.pc)PUI.sync={di:S.days.indexOf(d00),txt:"The suggested plan below is updated. Use Create new version or Update a version to use it."};else plSyncSel(d00,sel00,SY)}}else if(k=="cal"||k=="m")PUI.sync=null;
  var y=window.scrollY;plView();tabs();window.scrollTo(0,y);if(ch)save()},true);
 var PACE={casual:{n:"Casual",fr:90,wf:1.4,cu:3,ev:2,brk:25,q:1.15,meal:60,d:"Easy going: a rest break after every 2 activities, slower walking, longer meals"},balanced:{n:"Balanced",fr:45,wf:1.15,cu:2,ev:3,brk:20,q:1,meal:45,d:"A mix: several activities in a row, then a rest break after every 3"},quick:{n:"Quick",fr:15,wf:1,cu:0,ev:6,brk:10,q:.9,meal:30,d:"Marathon: most activities, brisk walking, only a short break after every 6"}};
 var SHOWT=[[/parade/i,915],[/fantasmic/i,1260],[/wintertime/i,1230],[/believe|fireworks/i,1290],[/world of color/i,1260],[/toy drummers/i,630]];
@@ -1532,7 +1726,7 @@ function plWin(d){var w=(S.pl&&S.pl.win&&S.pl.win[d.tab])||{},s=plWinNorm(w.s||"
  return{s:sm,e:em,on:sm!=null||em!=null,sl:sl,el:el,er:er,sk:s,ek:e}}
 var PGATE={dl:[{id:"main",n:"Main Entrance (Main Street, U.S.A.)",s:"Main Entrance",a:"MS"},{id:"mono",n:"Tomorrowland Monorail station (from Downtown Disney)",s:"Monorail station",a:"TL"},{id:"dd",n:"Main Entrance via Downtown Disney security (Pixar Pals walkway)",s:"Downtown Disney route",a:"MS",c:"Arrive via Downtown Disney, then the Main Entrance on Main Street."+" Parking route: take the Pixar Pals 2nd-floor walkway (from Pixar Pals or Mickey & Friends) over to Downtown Disney, go through its security entrance, then walk the Esplanade to the park gates. Skips the main lot security and tram lines. Its walk to the park gates is not counted in the plan. Confirm the route and checkpoint on the day."},{id:"back",n:"Backstage exit by Refreshment Corner (Main Street)",s:"Backstage exit",a:"MS",xo:1,c:"Exit only. Usually open around the fireworks, during or after night parades and after Fantasmic to ease crowds. Wide and often quiet, so good with a scooter, stroller or service dog. Confirm with a Cast Member on the day, as it is not always open."}],ca:[{id:"main",n:"Main Entrance (Buena Vista Street)",s:"Main Entrance",a:"BV"},{id:"dd",n:"Main Entrance via Downtown Disney security (Pixar Pals walkway)",s:"Downtown Disney route",a:"BV",c:"Arrive via Downtown Disney, then the Main Entrance on Buena Vista Street."+" Parking route: take the Pixar Pals 2nd-floor walkway (from Pixar Pals or Mickey & Friends) over to Downtown Disney, go through its security entrance, then walk the Esplanade to the park gates. Skips the main lot security and tram lines. Its walk to the park gates is not counted in the plan. Confirm the route and checkpoint on the day."},{id:"gc",n:"Grand Californian Hotel gate (hotel guests only)",s:"Grand Californian gate",a:"GP"}]};
 function plGate(d){var g=(S.pl&&S.pl.gate&&S.pl.gate[d.tab])||{},L=PGATE[d.p]||[],f=function(id){return L.filter(function(x){return x.id==id})[0]||null},i=f(g.i),o=f(g.o);if(i&&i.xo)i=null;return{i:i,o:o,on:!!(i||o)}}
-function plGateTxt(d){var g=plGate(d);return g.on?"In: "+(g.i?g.i.s:"any gate")+" \u00b7 Out: "+(g.o?g.o.s:"any gate"):""}
+function plGateTxt(d){var g=plGate(d),a=g.on?"In: "+(g.i?g.i.s:"any gate")+" \u00b7 Out: "+(g.o?g.o.s:"any gate"):"",b=plLL(d)!="std"?"LL: "+plLLName(d,1):"";return a&&b?a+" \u00b7 "+b:a||b}
 function plGateLine(d){var g=plGate(d);if(!g.on)return"";return '<p class="gtl" aria-label="Gates"><span><i>Enter</i>'+esc(g.i?g.i.n:"No preference")+'</span><span><i>Exit</i>'+esc(g.o?g.o.n:"No preference")+'</span></p>'}
 function plGateHTML(d){var g=plGate(d),L=PGATE[d.p]||[],pk=plPace(d),sc=(plChosen(d).length&&(g.i||g.o))?plSched(d,pk):null,PA=PAREA[d.p];
  function sel(k,cur,lab){return '<label>'+lab+'<select data-gate="'+k+'" aria-label="'+lab+' gate"><option value="">No preference</option>'+L.filter(function(x){return k=="o"||!x.xo}).map(function(x){return '<option value="'+x.id+'"'+(cur&&cur.id==x.id?' selected':'')+'>'+esc(x.n)+'</option>'}).join("")+'</select></label>'}
@@ -1557,13 +1751,92 @@ function plParadeHTML(d){var L=PSPOT[d.p];if(!L)return"";var ps=plChosen(d).filt
    else b.push("This parade is not in the plan at this pace and day window, so the spot is not used.");
    h+='<p class="hint"><b>'+esc(sp.s)+':</b> '+esc(b.join(" "))+'</p>'}});
  return h+'</div>'}
+var LLTIER={dl:{src:"the tier guide you supplied",t:[
+ {n:1,h:"Book it first",why:"Gone before most people break for lunch. Book or ride standby early.",re:/indiana jones|space mountain|hyperspace|runaway railway|big thunder/i},
+ {n:2,h:"Plan ahead",why:"Not urgent in the morning but probably gone by evening. Get to these by mid-afternoon. Smugglers Run was recently elevated and demand is being monitored.",re:/haunted mansion|tiana|matterhorn|roger rabbit|smugglers run|millennium falcon/i},
+ {n:3,h:"No rush",why:"Typically available all day. Do not waste an early booking on these. Save them for later.",re:/star tours|small world|buzz lightyear|autopia/i}]},
+ ca:{src:"Disney Tourist Blog's booking-availability notes",t:[
+ {n:1,h:"Book it first",why:"Reservations go fastest. Book or ride standby early.",re:/guardians|breakout|toy story midway|web slingers|soarin/i},
+ {n:2,h:"Plan ahead",why:"Middle demand. Demand varies by season and day.",re:/goofy.s sky school|incredicoaster|grizzly river/i},
+ {n:3,h:"No rush",why:"Lower demand. Easy to book later in the day.",re:/monsters, inc|mike & sulley|little mermaid/i}]}};
+var LLRIGHT={dl:{TL:1,TN:1,FL:1}};
+var LLLAB={std:"Standard strategy",stack:"Stacking strategy"};
+function plTierOf(p,it){var T=LLTIER[p];if(!T)return 2;for(var i=0;i<T.t.length;i++)if(T.t[i].re.test(it.n))return T.t[i].n;return 2}
+function plLLo(d){var v=S.pl&&S.pl.llst&&S.pl.llst[d.tab],o={m:"std",rs:0,tier:0,sw:720};if(v){if(typeof v=="string"){if(v=="stack")o.m="stack";else if(v=="rs"){o.m="stack";o.rs=1}else if(v=="tier")o.tier=1}else{if(v.m=="stack")o.m="stack";o.rs=v.rs?1:0;o.tier=v.tier?1:0;if(v.sw>=540&&v.sw<=840)o.sw=Math.round(v.sw/30)*30}}
+ if(!LLRIGHT[d.p])o.rs=0;if(!LLTIER[d.p])o.tier=0;return o}
+function plLL(d){var o=plLLo(d);return(o.m=="std"&&!o.rs&&!o.tier)?"std":"on"}
+function plLLName(d,sh){var o=plLLo(d),a=[];if(sh){a.push(o.m=="stack"?"Stacking":"Standard");if(o.rs)a.push("right side first");if(o.tier)a.push("tiers");return a.join(" + ")}
+ a.push(LLLAB[o.m]);if(o.rs)a.push("right side first");if(o.tier)a.push("tier order");return a.join(" + ")}
+function plLLLine(d){return plLL(d)!="std"?'<p class="gtl" aria-label="Lightning Lane strategy"><span><i>Lightning Lane</i>'+esc(plLLName(d))+'</span></p>':""}
+function plSideApply(d,info){if(!plLLo(d).rs)return;var R=LLRIGHT[d.p],rm={},p=d.p;
+ info.anch=info.anch.filter(function(a){if(a.kind=="LL"&&R[a.it.a]){rm[a.it.id]=1;return false}return true});
+ function mentions(r){return boldNames(r.tx).some(function(n){var f=plFind(p,n);return f&&rm[f.id]})}
+ info.pre=info.pre.filter(function(r){return !mentions(r)});Object.keys(info.att).forEach(function(id){info.att[id]=info.att[id].filter(function(r){return !mentions(r)})});info.rs=rm}
+function plTierRun(d,pk,info,A,start,end,pc){var LO=plLLo(d);if(!LO.tier||LO.m=="stack")return null;var p=d.p;
+ var singles=(S.ll||[]).filter(function(r){return /single/i.test(r[4]||"")}).map(function(r){return String(r[2]).toLowerCase()});
+ var L=A.filter(function(a){return a.kind=="LL"&&a.it&&singles.indexOf(a.it.n.toLowerCase())<0}).sort(function(a,b){return a.t-b.t}),res={tier:1,total:L.length,moved:0,skip:0,bk:[],list:[],warn:[]};
+ if(!L.length)return res;
+ function ov(list){var q=list.slice().sort(function(a,b){return a.t-b.t}),o=0;for(var i=1;i<q.length;i++)o+=Math.max(0,q[i-1].t+q[i-1].dur-q[i].t);return o}
+ var before=ov(L),old=L.map(function(a){return a.t}),rides=L.slice().sort(function(a,b){return plTierOf(p,a.it)-plTierOf(p,b.it)||a.t-b.t});
+ rides.forEach(function(a,i){a.t=old[i]});
+ if(ov(L)>before+10){L.forEach(function(a,i){a.t=old[i]});res.skip=1;return res}
+ L.forEach(function(a,i){if(a.t!=old[i])res.moved++;a.tier=plTierOf(p,a.it);a.row=null});
+ var sid={};L.forEach(function(a){sid[a.it.id]=1});
+ function mentions(r){return boldNames(r.tx).some(function(n){var f=plFind(p,n);return f&&sid[f.id]})}
+ info.pre=info.pre.filter(function(r){return !mentions(r)});Object.keys(info.att).forEach(function(id){info.att[id]=info.att[id].filter(function(r){return !mentions(r)})});
+ var q=L.slice().sort(function(a,b){return a.t-b.t}),bt=start;
+ q.forEach(function(a,k){res.list.push({it:a.it,t:a.t,tier:a.tier});if(a.tier==3&&k>0)bt=Math.max(bt,a.t-120);res.bk.push({t:bt,x:(k==0?"Book Lightning Lane at the gate (Tier "+a.tier+"): ":"Book Lightning Lane (Tier "+a.tier+"): ")+a.it.n,n:"return time about "+fmt(a.t)});bt=Math.max(bt,Math.min(bt+120,a.t));if(a.tier==2&&a.t>900)res.warn.push(a.it.n+" at "+fmt(a.t))});
+ return res}
+function plStackRun(d,pk,info,A,start,end,pc){var LO=plLLo(d);if(LO.m!="stack")return null;var p=d.p,D=PDIST[p],PA=PAREA[p];
+ function wk(a,b){return(!a||!b||a==b)?0:Math.round(D[a][b]*pc.wf)+pc.cu}
+ var singles=(S.ll||[]).filter(function(r){return /single/i.test(r[4]||"")}).map(function(r){return String(r[2]).toLowerCase()});
+ var L=A.filter(function(a){return a.kind=="LL"&&a.it&&singles.indexOf(a.it.n.toLowerCase())<0}).sort(function(a,b){return a.t-b.t});
+ var ns=Math.max(0,Math.floor((LO.sw-start)/120)+1),TR=LO.tier,pick=(TR?L.filter(function(a){return plTierOf(p,a.it)<3}).sort(function(a,b){return plTierOf(p,a.it)-plTierOf(p,b.it)||a.t-b.t}):L).slice(0,ns),res={ns:ns,total:L.length,placed:[],skipped:[],bk:[],tier:TR?2:0,t3:[]};
+ if(TR)L.forEach(function(a){a.tier=plTierOf(p,a.it);if(a.tier==3)res.t3.push(a.it)});
+ if(!pick.length)return res;
+ var oth=A.filter(function(a){return pick.indexOf(a)<0});
+ var left=pick.slice(),ord=[],pa=PA.start;while(left.length){left.sort(function(a,b){return wk(pa,a.it.a)-wk(pa,b.it.a)});var x=left.shift();ord.push(x);pa=x.it.a}
+ var t0=1020,pe=null,par=PA.start;
+ ord.forEach(function(a){var t=pe==null?t0:Math.max(t0,pe+wk(par,a.it.a));
+  for(var g=0;g<12;g++){var hit=oth.filter(function(o){var lo=o.t-(o.early||0)-10,hi=o.t+o.dur+10;return t<hi&&t+a.dur>lo})[0];if(!hit)break;t=hit.t+hit.dur+10+wk(hit.it?hit.it.a:par,a.it.a)}
+  if(t+a.dur>end-10){res.skipped.push(a.it);return}
+  a.t=t;a.stk=1;a.row=null;oth.push(a);pe=t+a.dur;par=a.it.a;res.placed.push(a)});
+ var sid={};res.placed.forEach(function(a){sid[a.it.id]=1});
+ function mentions(r){return boldNames(r.tx).some(function(n){var f=plFind(p,n);return f&&sid[f.id]})}
+ info.pre=info.pre.filter(function(r){return !mentions(r)});Object.keys(info.att).forEach(function(id){info.att[id]=info.att[id].filter(function(r){return !mentions(r)})});
+ var bk=res.placed.slice().sort(function(a,b){return(TR?plTierOf(p,a.it)-plTierOf(p,b.it):0)||b.it.pop-a.it.pop});
+ bk.forEach(function(a,i){var bt=start+120*i;res.bk.push({t:bt,x:(i==0?"Book Lightning Lane at the gate: ":"Book Lightning Lane (2 hours after the last booking): ")+a.it.n+(TR?" (Tier "+plTierOf(p,a.it)+")":""),n:"choose the latest early-evening return time (about "+fmt(a.t)+") or book and modify it to that"})});
+ if(res.placed.length)res.bk.push({t:Math.max(LO.sw,start+120*(res.placed.length-1)+1),x:"Switch to book and redeem",n:"book the next Lightning Lane as you tap into the last one, or 2 hours after booking. Those return times fall before your stacked evening slots"});
+ return res}
+function plLLfx(d,sc,pk){var k=sc.stk,o=plLLo(d),parts=[],pl;
+ if(o.rs){var nm=Object.keys(sc.info.rs||{}).map(function(id){var z=plPitem(id);return z?z.n:""}).filter(Boolean);parts.push(nm.length?"Right side done first as standby, before about 11:30 AM: "+nm.join(", ")+".":"The right side (Tomorrowland, Mickey's Toontown, Fantasyland) is done first as standby.")}
+ if(o.m=="stack"&&k){pl=k.placed.slice().sort(function(a,b){return a.t-b.t});
+  if(!k.total)parts.push("No Lightning Lane rides are left in this day's plan, so there is nothing to stack.");
+  else if(!pl.length)parts.push("Nothing could be stacked: the early-evening slots do not fit before the end of the day alongside your other fixed times, so the day keeps its standard Lightning Lane times.");
+  else parts.push("Stacked "+pl.length+" of "+k.total+" Lightning Lane ride"+(k.total>1?"s":"")+" into the early evening: "+pl.map(function(a){return a.it.n+(o.tier?" (Tier "+plTierOf(d.p,a.it)+")":"")+" at "+fmt(a.t)}).join(", ")+". Bookings are made at "+k.bk.filter(function(b){return !/^Switch/.test(b.x)}).map(function(b){return fmt(b.t)}).join(", ")+", then you switch to book and redeem."+(k.skipped.length?" Not stacked (no room): "+k.skipped.map(function(z){return z.n}).join(", ")+".":""));
+  if(o.tier&&k.total)parts.push("Tier order: Tier 1 rides are stacked first, then Tier 2. Tier 3 rides are not stacked"+(k.t3.length?" ("+k.t3.map(function(z){return z.n}).join(", ")+")":"")+", so no early booking is spent on them.")}
+ else if(o.tier&&k){if(!k.total)parts.push("No Lightning Lane rides are left in this day's plan, so there are no tiers to apply.");else if(k.skip)parts.push("The tiered order would clash with other fixed times, so the day keeps its standard Lightning Lane times.");
+  else{var t="Lightning Lane order by tier: "+k.list.map(function(z){return z.it.n+" (Tier "+z.tier+") at "+fmt(z.t)}).join(", ")+".";if(k.warn.length)t+=" Tier 2 later than mid-afternoon: "+k.warn.join(", ")+".";parts.push(t)}}
+ var fx=parts.join(" "),sv=S.pl.llst[d.tab],s0=null;try{delete S.pl.llst[d.tab];s0=plSched(d,pk)}finally{S.pl.llst[d.tab]=sv}
+ if(s0)fx+=" Compared with the standard strategy, walking goes from "+s0.walk+" to "+sc.walk+" min and rest from "+s0.rt+" to "+sc.rt+" min."+(sc.late>s0.late+5?" It also adds about "+(sc.late-s0.late)+" min of lateness between fixed times.":"");
+ return fx}
+function plLLHTML(d){if(!plChosen(d).length)return"";var o=plLLo(d),pk=plPace(d),p=d.p,pn=p=="ca"?"California Adventure":"Disneyland",on=plLL(d)!="std",sc=on?plSched(d,pk):null,fx=sc?plLLfx(d,sc,pk):"",T=LLTIER[p];
+ var ds={std:"Book the first Lightning Lane at the gate, then book each next one as you tap into the last or 2 hours after booking, and redeem through the day.",stack:"From the start of the day until about "+fmt(o.sw)+", use the 2-hour rule to book again and again, choosing or modifying each booking to the early-evening return times. After about "+fmt(o.sw)+" switch to book and redeem, which return before the stacked evening slots."};
+ function chk(k,lab,on2,dsc){return '<label class="llchk"><input type="checkbox" data-llmod="'+k+'"'+(on2?' checked':'')+'> <span><b>'+esc(lab)+'</b><small>'+esc(dsc)+'</small></span></label>'}
+ var mods="";
+ if(LLRIGHT[p])mods+=chk("rs","Right side first",o.rs,"Enter at the Main Entrance around rope drop and do the right side of the park first (Tomorrowland, Mickey's Toontown and Fantasyland) as standby, with no Lightning Lane. The left side keeps the strategy above.");
+ if(T)mods+=chk("tier","Tier order",o.tier,"Focus on the tiers. "+T.t.map(function(z){return "Tier "+z.n+" ("+z.h.toLowerCase()+"): "+z.why}).join(" ")+" With Standard, the slots your day already has are given out in tier order. With Stacking, Tier 1 then Tier 2 rides are stacked and Tier 3 rides are not. Tiers come from "+T.src+"; rides not listed count as Tier 2.");
+ return '<div class="ps pgt pll"><h3>Lightning Lane strategy for '+esc(d.tab)+' ('+pn+')</h3><p class="hint"><b>Standard strategy:</b> '+esc(ds.std)+'</p><p class="hint"><b>Stacking strategy:</b> '+esc(ds.stack)+'</p><div class="pwr"><label>Strategy<select data-llst aria-label="Lightning Lane strategy"><option value="std"'+(o.m=="std"?' selected':'')+'>Standard strategy</option><option value="stack"'+(o.m=="stack"?' selected':'')+'>Stacking strategy</option></select></label>'+(o.m=="stack"?'<label>Switch to book and redeem at<select data-llsw aria-label="Switch to book and redeem time">'+[540,570,600,630,660,690,720,750,780,810,840].map(function(z){return '<option value="'+z+'"'+(z==o.sw?' selected':'')+'>'+fmt(z)+'</option>'}).join("")+'</select></label>':'')+'</div>'+(mods?'<p class="hint"><b>Optional extras</b> that work with either strategy:</p>'+mods:'')+(fx?'<p class="hint">'+esc(fx)+'</p>':'')+'<p class="hint">Evening slots are not always available, so check the Disneyland app. Lightning Lane rides are re-timed around your reservations, shows and other fixed times, and every other rule still applies.'+(p=="ca"?" A right-side-first extra is not offered here yet, because I have no source for how California Adventure splits into sides.":"")+'</p></div>'}
 function plWinLine(d){var w=plWin(d);return w.on?'<p class="hint"><b>Planned window:</b> '+esc(w.sl)+' to '+esc(w.el)+'. Set in Planner, Suggested day plans.</p>':''}
 function plWinHTML(d){var w=plWin(d);return '<div class="ps pwin"><h3>Day window for '+esc(d.tab)+'</h3><p class="hint">When you want to start and finish. The suggested plan is built inside this window, and fixed Lightning Lane slots, reservations and shows outside it are moved to Dropped.</p><div class="pwr"><label>Start<select data-win="s" aria-label="Start time">'+[["rope","Rope drop (park opening)"]].concat(plHalf(360,1200)).map(function(o){return '<option value="'+o[0]+'"'+(w.sk==o[0]?' selected':'')+'>'+o[1]+'</option>'}).join("")+'</select></label><label>End<select data-win="e" aria-label="End time">'+[["close","Park close"],["par","After the parade (about 4:00 PM)"],["fw","After the fireworks or last show"]].concat(plHalf(720,1410)).map(function(o){return '<option value="'+o[0]+'"'+(w.ek==o[0]?' selected':'')+'>'+o[1]+'</option>'}).join("")+'</select></label></div>'+(w.er?'<p class="hint err">'+esc(w.er)+'</p>':'')+'<p class="hint">Window in use: <b>'+esc(w.sl)+' to '+esc(w.el)+'</b></p></div>'}
 function plPace(d){return(S.pl&&S.pl.pace&&S.pl.pace[d.tab]&&PACE[S.pl.pace[d.tab]])?S.pl.pace[d.tab]:"balanced"}
 function plPri(d,c){return Math.max.apply(null,plVals(d,c.id).concat([0]))}
-function plQ(it,t,pc){var b;if(it.t=="S")b=15;else if(it.t=="R"||it.t=="A"){b=[0,5,10,20,35,45][it.pop]||10;var tp=typPat(fmt(t));b=Math.round(b*({Lighter:.7,Busy:1,Busiest:1.2,Easing:.9}[tp&&tp[0]]||1))}else b=0;return Math.round(b*pc.q)}
+var PQD=1,CRWD={22:"Busy",23:"Very Busy",25:"Very Busy",26:"Very Busy"},CRWF={"Light":.8,"Moderate":.9,"Busy":1,"Very Busy":1.15};
+function plCrowd(d){var dt=d&&dDate(d),l=dt&&dt.m==10?CRWD[dt.d]:null;return{l:l,f:l?CRWF[l]:1}}
+function plCrowdLine(d){var c=plCrowd(d);return '<p class="hint pcrowd"><b>Crowd forecast for '+esc(d.tab)+':</b> '+(c.l?esc(c.l)+'. Expected queue times in the plan are '+(c.f==1?'the usual':'scaled by '+c.f+' compared with a Busy day')+' for each ride, and Lightning Lane advice uses the same level.':'no forecast for this date, so usual queue times are used.')+'</p>'}
+function plQ(it,t,pc){var b;if(it.t=="S")b=15;else if(it.t=="R"||it.t=="A"){b=[0,5,10,20,35,45][it.pop]||10;var tp=typPat(fmt(t));b=Math.round(b*({Lighter:.7,Busy:1,Busiest:1.2,Easing:.9}[tp&&tp[0]]||1))}else b=0;return Math.round(b*pc.q*(pc.cf!=null?pc.cf:PQD))}
 function plPlanInfo(d){var p=d.p,anch=[],used={},att={},pre=[],orig={},last=null,sel={};plChosen(d).forEach(function(c){sel[c.id]=1});
- d.blocks.forEach(function(b,bi){var bt=t2m(b.tm);b.rows.forEach(function(r){
+ plSrc(d).blocks.forEach(function(b,bi){var bt=t2m(b.tm);b.rows.forEach(function(r){
   if(r.g=="LL"){if(last)(att[last]=att[last]||[]).push(r);else pre.push(r);return}
   if(r.g!="RIDE"&&r.g!="SHOW"&&r.g!="DINE")return;
   var nm=boldNames(r.tx),ts=dTimes(r.du).concat(dTimes(r.tx)),who=/DP\s*Only/i.test(r.tx)?"d":/GP\s*Only/i.test(r.tx)?"g":"b";
@@ -1574,11 +1847,13 @@ function plPlanInfo(d){var p=d.p,anch=[],used={},att={},pre=[],orig={},last=null
    else if(r.g=="SHOW"){var tt=dTimes(r.du)[0]||ts[k]||ts[0];if(tt){t=dMin(tt);kind="SHOW"}else SHOWT.forEach(function(s){if(t==null&&s[0].test(x)){t=s[1];kind="SHOW?"}})}
    if(t!=null&&t<9999){used[it.id]=1;anch.push({it:it,t:t,kind:kind,row:nm.length==1?r:null,who:who})}
    else if(nm.length==1&&!orig[it.id])orig[it.id]={row:r,who:who}})})});
+ plChosen(d).forEach(function(it){if(it.t!="D")return;var rv=plResAny(d,it.id),tm=rv?t2m(rv):null;if(tm==null)return;var ex=anch.filter(function(a){return a.it.id==it.id})[0];if(ex){ex.t=tm;ex.kind="RES";ex.row=null;ex.rv=1}else{anch.push({it:it,t:tm,kind:"RES",row:null,who:(orig[it.id]&&orig[it.id].who)||"b",rv:1});delete orig[it.id]}});
  return{anch:anch,att:att,pre:pre,orig:orig}}
 function plPitem(id){return PCAT.filter(function(c){return c.id==id})[0]}
 function plAccOf(d,pk){return(S.pl&&S.pl.acc&&S.pl.acc[d.tab+"|"+pk])||[]}
 function plRejOf(d,pk){return(S.pl&&S.pl.rej&&S.pl.rej[d.tab+"|"+pk])||[]}
-function plSched(d,pk,exc){var pc=PACE[pk],p=d.p,D=PDIST[p],PA=PAREA[p],info=plPlanInfo(d),chosen=plChosen(d),aid={};
+function plSched(d,pk,exc){PQD=plCrowd(d).f;var pc=PACE[pk],p=d.p,D=PDIST[p],PA=PAREA[p],info=plPlanInfo(d),chosen=plChosen(d),aid={};
+ plSideApply(d,info);
  info.anch.forEach(function(a){aid[a.it.id]=1});
  var am=/Arrival:\s*(\d{1,2}:\d{2}\s?[AP]M)/i.exec(d.arr||""),dm=/Departure:\s*(\d{1,2}:\d{2}\s?[AP]M)/i.exec(d.arr||""),start=am?dMin(am[1]):480,end=dm?dMin(dm[1]):1320,W=plWin(d),G=plGate(d),xa=G.o?G.o.a:null;if(W.s!=null)start=W.s;if(W.e!=null)end=W.e;
  exc=exc||{};var accm={};plAccOf(d,pk).forEach(function(z){accm[z.id]=1});var flex=chosen.filter(function(c){return !aid[c.id]&&!accm[c.id]}),meals=flex.filter(function(c){return c.t=="D"}),acts0=flex.filter(function(c){return c.t!="D"&&!exc[c.id]}),dropped=flex.filter(function(c){return c.t!="D"&&exc[c.id]});
@@ -1587,13 +1862,14 @@ function plSched(d,pk,exc){var pc=PACE[pk],p=d.p,D=PDIST[p],PA=PAREA[p],info=plP
  A.forEach(function(a){if(a.it&&a.it.t=="S"&&(a.kind=="SHOW"||a.kind=="SHOW?"||a.kind=="ADD")){var sp=plSpot(d,a.it);if(sp){a.it=Object.assign({},a.it,{a:sp.a,sp:sp});a.early=sp.e;a.row=null}}});
  [[735,"Lunch"],[1065,"Dinner"]].forEach(function(m,i){if(i==1&&end<1150)return;if(W.on&&(m[0]<start||m[0]>end-30))return;var has=A.some(function(a){return a.it&&a.it.t=="D"&&a.kind!="ADD"&&Math.abs(a.t-m[0])<150});if(has)return;var x=meals.shift();A.push(x?{it:x,t:m[0],kind:"MEAL",dur:pc.meal}:{it:null,t:m[0],kind:"BREAK",dur:pc.meal,lab:m[1]})});
  meals.forEach(function(x){dropped.push(x)});
+ var stk=plStackRun(d,pk,info,A,start,end,pc)||plTierRun(d,pk,info,A,start,end,pc);
  A.sort(function(a,b){return a.t-b.t});
  if(W.on)A=A.filter(function(a){var ok=a.t>=start-5&&a.t<=end;if(!ok&&a.it&&a.kind!="MEAL")dropped.push(a.it);return ok});
  var dl={};Object.keys(info.att).forEach(function(id){info.att[id].forEach(function(r){boldNames(r.tx).forEach(function(n){var f=plFind(p,n);if(!f)return;A.forEach(function(a){if(a.kind=="LL"&&a.it.id==f.id)dl[id]=Math.min(dl[id]==null?1e9:dl[id],a.t-30)})})})});
  function wk(a,b){return(!a||!b||a==b)?0:Math.round(D[a][b]*pc.wf)+pc.cu}
- var E={};function run(list){function gap(t0,du,ar){var r=Math.min(du,pc.fr);ev.push({k:"brk",t:t0,du:r,area:ar});if(du-r>=10)ev.push({k:"free",t:t0+r,du:du-r,area:ar})}
+ var E={},RSD=plLLo(d).rs?LLRIGHT[p]:null;function run(list){function gap(t0,du,ar){var r=Math.min(du,pc.fr);ev.push({k:"brk",t:t0,du:r,area:ar});if(du-r>=10)ev.push({k:"free",t:t0+r,du:du-r,area:ar})}
 var rem=list.slice(),ev=[],t=start,area=G.i?G.i.a:PA.start,cnt=0,walk=0,late=0;
-  function fill(until,to){for(;;){var best=null,bs=1e9;rem.forEach(function(c){var w=wk(area,c.a),q=plQ(c,t+w,pc),fin=t+w+q+c.m;if(E[c.id]!=null&&t+w<E[c.id])return;if(fin+wk(c.a,to)>until)return;if(dl[c.id]!=null&&fin>dl[c.id])return;var urg=(dl[c.id]!=null&&dl[c.id]-fin<120)?-500:0,s=D[area][c.a]*10-plPri(d,c)*25-c.pop*2+urg+plBias(p,c,t+w+q);if(s<bs){bs=s;best={c:c,w:w,q:q}}});
+  function fill(until,to){for(;;){var best=null,bs=1e9;rem.forEach(function(c){var w=wk(area,c.a),q=plQ(c,t+w,pc),fin=t+w+q+c.m;if(E[c.id]!=null&&t+w<E[c.id])return;if(fin+wk(c.a,to)>until)return;if(dl[c.id]!=null&&fin>dl[c.id])return;var urg=(dl[c.id]!=null&&dl[c.id]-fin<120)?-500:0,s=D[area][c.a]*10-plPri(d,c)*25-c.pop*2+urg+plBias(p,c,t+w+q)+(RSD&&t+w+q<690&&!RSD[c.a]?150:0);if(s<bs){bs=s;best={c:c,w:w,q:q}}});
    if(!best)break;var c=best.c;if(best.w){ev.push({k:"walk",t:t,du:best.w,from:area,to:c.a});t+=best.w;walk+=best.w;area=c.a}
    ev.push({k:"act",t:t,it:c,q:best.q,end:t+best.q+c.m});t+=best.q+c.m;rem.splice(rem.indexOf(c),1);cnt++;
    if(cnt%pc.ev==0&&rem.length&&t+pc.brk<until-10){ev.push({k:"brk",t:t,du:pc.brk,area:area});t+=pc.brk}}}
@@ -1618,11 +1894,11 @@ var rem=list.slice(),ev=[],t=start,area=G.i?G.i.a:PA.start,cnt=0,walk=0,late=0;
    var t0=e.t,du=e.k=="anc"?e.a.dur:e.du,ar=e.area||(g&&g.area)||PA.start,lb=e.k=="anc"?e.a.lab:null;
    if(g&&t0<=g.e+5){g.e=Math.max(g.e,t0+du);if(lb&&!g.lab)g.lab=lb}else{fl();g={t:t0,e:t0+du,area:ar,lab:lb}}});fl();res.ev=o})();
  var cnt={act:0,brk:0,free:0,lm:0};res.ev.forEach(function(e){if(e.k=="act")cnt.act++;if(e.k=="brk"){cnt.brk++;cnt.lm+=e.du}if(e.k=="free"){cnt.free+=e.du;cnt.lm+=e.du;cnt.brk++}if(e.k=="anc"&&!e.a.it){cnt.lm+=e.a.dur;cnt.brk++}});
- return{pk:pk,G:G,gout:(res.ev.filter(function(e){return e.x})[0]||{du:0}).du,ev:res.ev,dropped:dropped,walk:res.walk,late:res.late,n:cnt.act+res.ev.filter(function(e){return e.k=="anc"&&e.a.it}).length,brk:cnt.brk,free:cnt.free,lm:cnt.lm,rt:cnt.lm,info:info,start:start,end:end,A:A}}
+ return{pk:pk,stk:stk,G:G,gout:(res.ev.filter(function(e){return e.x})[0]||{du:0}).du,ev:res.ev,dropped:dropped,walk:res.walk,late:res.late,n:cnt.act+res.ev.filter(function(e){return e.k=="anc"&&e.a.it}).length,brk:cnt.brk,free:cnt.free,lm:cnt.lm,rt:cnt.lm,info:info,start:start,end:end,A:A}}
 function plAlt(d,x,sc,others){var h=[],p=d.p,days=[];S.days.forEach(function(y,i){if(y!==d&&y.p==p&&!y.pc)days.push({y:y,n:plChosen(y).length,i:i})});
  days.sort(function(a,b){return a.n-b.n});
  if(days.length)h.push(esc("Try it on "+days[0].y.tab+" instead ("+days[0].n+" selected, the lightest "+(p=="ca"?"California Adventure":"Disneyland")+" day)"+(x.pop>=3&&x.t=="R"?", ideally before 9 am or after 8:30 pm when waits are lighter":"")+"."));else h.push(esc("No other "+(p=="ca"?"California Adventure":"Disneyland")+" day is in the plan. Use + Add day to give it a home."));
- var pc=PACE[sc.pk],slots=[];sc.ev.forEach(function(e){if(e.k=="brk"){var ea=e.lab?30:(e.du>=45?15:0);slots.push({t:e.t,tot:e.du,eat:Math.min(ea,e.du),du:Math.max(0,e.du-ea),area:e.area,lab:(e.lab?e.lab+" rest":"Rest break")})}else if(e.k=="anc"&&e.a.it&&e.a.it.t=="D")slots.push({t:e.t,tot:e.a.dur,eat:Math.min(e.a.it.m,e.a.dur),du:Math.max(0,e.a.dur-e.a.it.m),area:e.a.it.a,lab:"Meal at "+e.a.it.n})});
+ PQD=plCrowd(d).f;var pc=PACE[sc.pk],slots=[];sc.ev.forEach(function(e){if(e.k=="brk"){var ea=e.lab?30:(e.du>=45?15:0);slots.push({t:e.t,tot:e.du,eat:Math.min(ea,e.du),du:Math.max(0,e.du-ea),area:e.area,lab:(e.lab?e.lab+" rest":"Rest break")})}else if(e.k=="anc"&&e.a.it&&e.a.it.t=="D")slots.push({t:e.t,tot:e.a.dur,eat:Math.min(e.a.it.m,e.a.dur),du:Math.max(0,e.a.dur-e.a.it.m),area:e.a.it.a,lab:"Meal at "+e.a.it.n})});
  var cands=slots.map(function(s){var w=s.area==x.a?0:Math.round(PDIST[p][s.area][x.a]*pc.wf)+pc.cu,q=plQ(x,s.t,pc),need=2*w+q+x.m;return{s:s,w:w,need:need,fit:need<=s.du}}).sort(function(a,b){return(a.fit?0:1)-(b.fit?0:1)||a.w-b.w||a.s.t-b.s.t}).filter(function(c){return plRejOf(d,sc.pk).indexOf(x.id+"@"+c.s.t)<0}).slice(0,3);
  cands.forEach(function(c){var near=c.fit&&c.w<=15,tt=c.s.t+c.s.eat+c.w;h.push(esc((c.fit?"Fits in the ":"Next closest: the ")+fmt(c.s.t)+" "+c.s.lab.toLowerCase()+" near "+PAREA[p].names[c.s.area]+" ("+(c.w?c.w+" min walk each way":"same area as "+x.n)+"): needs about "+c.need+" min. The "+c.s.tot+" min there "+(c.s.eat?"includes "+c.s.eat+" min for eating, leaving "+c.s.du+" min of rest, so ":"is all rest, so ")+(c.fit?"it fits.":"it is "+(c.need-c.s.du)+" min short.")+" Slot: "+fmt(c.s.t)+" to "+fmt(c.s.t+c.need)+".")+(near?"<div class=\"pacc\"><b>Suggestion:</b> add "+esc(x.n)+" into this rest time, starting about "+fmt(tt)+". <button class=\"ib pri\" data-pl=\"acc\" data-id=\""+x.id+"\" data-t=\""+tt+"\">Accept</button><button class=\"ib\" data-pl=\"rej\" data-id=\""+x.id+"\" data-t=\""+c.s.t+"\">Reject</button></div>":""))});
  others.forEach(function(o){if(o.pk!=sc.pk&&!o.dropped.some(function(z){return z.id==x.id}))h.push(esc("It fits at the "+PACE[o.pk].n+" pace."))});
@@ -1633,9 +1909,10 @@ function plLines(d,sc){var p=d.p,PA=PAREA[p],L=[],info=sc.info,nm=function(a){re
  sc.ev.forEach(function(e){
   if(e.k=="gate")L.push({t:e.t,c:"GATE",x:"Leave by the "+e.g.s,n:e.g.c?"usually open only around fireworks, night parades and after Fantasmic":""});else if(e.k=="walk")L.push({t:e.t,c:"WALK",x:e.x?"Walk to the "+sc.G.o.s+" ("+e.du+" min)":"Walk to "+nm(e.to)+" ("+e.du+" min)"});
   else if(e.k=="act"){var o=info.orig[e.it.id],w=o?o.who:"b";L.push({t:e.t,c:e.it.t=="S"?"SHOW":"RIDE",x:e.it.n+" ("+lab(e.it,w)+")",n:(e.it.t=="R"?"standby about "+e.q+" min queue":e.it.t=="S"?"arrive early":"")+(e.it.ll==1?" · LL available":"")+(e.it.sr?" · single rider":"")});atts(e.it.id)}
-  else if(e.k=="anc"){var a=e.a;if(!a.it)L.push({t:a.t,c:"LEISURE",x:(a.lab||"Meal")+" break (mobile order or nearest food)",n:a.dur+" min"});else L.push({t:a.t,c:a.kind=="LL"?"LL":a.it.t=="D"?"DINE":a.it.t=="S"?"SHOW":"RIDE",x:(a.kind=="LL"?"Redeem LL: ":a.kind=="SHOW?"?"Show (check time in app): ":"")+a.it.n,n:(a.kind=="ADD"?"added into rest time":"fixed ")+(a.kind=="LL"?"Lightning Lane slot":a.kind=="ADD"?"":a.kind=="RES"?"reservation":a.kind=="MEAL"?"meal":"show time")+(a.it.sp?" \u00b7 watching from "+a.it.sp.s+", be there by "+fmt(a.t-e.early):"")});atts(a.it&&a.it.id)}
+  else if(e.k=="anc"){var a=e.a;if(!a.it)L.push({t:a.t,c:"LEISURE",x:(a.lab||"Meal")+" break (mobile order or nearest food)",n:a.dur+" min"});else L.push({t:a.t,c:a.kind=="LL"?"LL":a.it.t=="D"?"DINE":a.it.t=="S"?"SHOW":"RIDE",x:(a.kind=="LL"?"Redeem LL: ":a.kind=="SHOW?"?"Show (check time in app): ":"")+a.it.n,n:(a.kind=="ADD"?"added into rest time":"fixed ")+(a.kind=="LL"?"Lightning Lane slot":a.kind=="ADD"?"":a.kind=="RES"?"reservation":a.kind=="MEAL"?"meal":"show time")+(a.stk?" \u00b7 stacked early-evening return":"")+(a.tier?" \u00b7 Tier "+a.tier+" ("+LLTIER[p].t[a.tier-1].h.toLowerCase()+")":"")+(a.it.sp?" \u00b7 watching from "+a.it.sp.s+", be there by "+fmt(a.t-e.early):"")});atts(a.it&&a.it.id)}
   else if(e.k=="brk")L.push({t:e.t,c:"LEISURE",x:(e.lab?e.lab+" rest break":"Rest break")+" near "+nm(e.area),n:e.du+" min"});
   else if(e.k=="free")L.push({t:e.t,c:"LEISURE",x:"Rest and free time",n:e.du+" min"})});
+ if(sc.stk&&sc.stk.bk.length)sc.stk.bk.forEach(function(b){var i=0;while(i<L.length&&!(L[i].t!=null&&L[i].t>b.t))i++;L.splice(i,0,{t:b.t,c:"LL",x:b.x,n:b.n})});
  return L}
 function plPaceHTML(d){if(!plChosen(d).length)return"";var pk=plPace(d),all=Object.keys(PACE).map(function(k){return plSched(d,k)}),sc=all.filter(function(s){return s.pk==pk})[0],ln=plLines(d,sc);
  var h='<div class="ps"><h3>Pace for '+esc(d.tab)+'</h3><div class="pseg">'+Object.keys(PACE).map(function(k){return '<button class="'+(k==pk?'on':'')+'" data-pl="pace" data-v="'+k+'">'+PACE[k].n+'</button>'}).join("")+'</div><p class="hint">'+esc(PACE[pk].d)+'. Fixed items (Lightning Lane slots, reservations and shows) keep their times. Total rest counts rest breaks, meal breaks and any free time left over. Rides are ordered to keep walking short and avoid doubling back.</p>';
@@ -1652,7 +1929,7 @@ function plBlocksFrom(d,sc){var p=d.p,PA=PAREA[p],info=sc.info,B=[],cur=null,nee
  function nb(t,ti){cur={tm:fmt(t),ti:ti,rows:[]};B.push(cur);need=false}
  function atts(id){(info.att[id]||[]).forEach(function(r){cur.rows.push(cp(r))})}
  function who(it,w){return w=="d"?"DP Only":w=="g"?"GP Only":plLab(d,plVals(d,it.id))}
- nb(sc.start,"Arrival & first bookings");if(sc.G&&sc.G.i)cur.rows.push({g:"NOTE",du:"",tx:"Enter by the "+sc.G.i.n+". It opens into "+PA.names[sc.G.i.a]+"."+(sc.G.i.c?" "+sc.G.i.c:""),lc:[],st:""});info.pre.forEach(function(r){cur.rows.push(cp(r))});need=true;
+ nb(sc.start,"Arrival & first bookings");if(sc.G&&sc.G.i)cur.rows.push({g:"NOTE",du:"",tx:"Enter by the "+sc.G.i.n+". It opens into "+PA.names[sc.G.i.a]+"."+(sc.G.i.c?" "+sc.G.i.c:""),lc:[],st:""});info.pre.forEach(function(r){cur.rows.push(cp(r))});if(sc.stk)sc.stk.bk.forEach(function(b){cur.rows.push({g:"LL",du:"",tx:"At "+fmt(b.t)+": "+b.x+" ("+b.n+").",lc:[],st:""})});need=true;
  sc.ev.forEach(function(e){
   if(e.k=="gate"){nb(e.t,"Exit");cur.rows.push({g:"NOTE",du:"",tx:"Leave by the "+e.g.n+"."+(e.g.c?" "+e.g.c:""),lc:[],st:""});need=true}
   else if(e.k=="walk"){nb(e.t,e.x?"Walk to the exit":PA.names[e.to]);cur.rows.push({g:"WALK",du:e.du+" mins",tx:e.x?"Walk from "+PA.names[e.from]+" to the "+sc.G.o.n+".":"Walk from "+PA.names[e.from]+" to "+PA.names[e.to]+".",lc:[],st:""});if(e.x)need=true}
@@ -1661,7 +1938,8 @@ function plBlocksFrom(d,sc){var p=d.p,PA=PAREA[p],info=sc.info,B=[],cur=null,nee
    atts(e.it.id)}
   else if(e.k=="anc"){var a=e.a;nb(a.t,a.it?(a.kind=="LL"?"Lightning Lane: ":"")+a.it.n:(a.lab||"Meal")+" break");
    if(!a.it)cur.rows.push({g:"LEISURE",du:a.dur+" mins",tx:"Meal break. Pick up a mobile order or eat at the nearest counter service.",lc:[],st:""});
-   else if(a.row)cur.rows.push(cp(a.row));else cur.rows.push({g:a.it.t=="S"?"SHOW":a.it.t=="D"?"DINE":"RIDE",du:fmt(a.t),tx:(a.it.t=="S"?"Watch **":a.it.t=="D"?"Meal at **":"**")+a.it.n+"** ("+who(a.it,a.who||"b")+")."+(a.it.sp?" Watch from "+a.it.sp.n+" ("+a.it.sp.land+"). Be in place by "+fmt(a.t-e.early)+(e.sh?", though other fixed times mean about "+e.sh+" min later":"")+". "+a.it.sp.c:"")+(a.kind=="ADD"?" Added into a rest break by the "+PACE[pk].n+" pace plan.":" Time to be confirmed in the Disneyland app."),lc:plLc(p,a.it,a.it.a),st:""});
+   else if(a.stk||a.tier)cur.rows.push({g:"RIDE",du:fmt(a.t),tx:a.stk?"Redeem your stacked Lightning Lane for **"+a.it.n+"** ("+who(a.it,a.who||"b")+"). It was booked in the morning for this early-evening return time. Confirm the return window in the Disneyland app.":"Redeem your Lightning Lane for **"+a.it.n+"** ("+who(a.it,a.who||"b")+"). Tier "+a.tier+": "+LLTIER[p].t[a.tier-1].h+". Confirm the return window in the Disneyland app.",lc:plLc(p,a.it,a.it.a),st:""});
+   else if(a.row)cur.rows.push(cp(a.row));else cur.rows.push({g:a.it.t=="S"?"SHOW":a.it.t=="D"?"DINE":"RIDE",du:fmt(a.t),tx:(a.it.t=="S"?"Watch **":a.it.t=="D"?"Meal at **":"**")+a.it.n+"** ("+who(a.it,a.who||"b")+")."+(a.it.sp?" Watch from "+a.it.sp.n+" ("+a.it.sp.land+"). Be in place by "+fmt(a.t-e.early)+(e.sh?", though other fixed times mean about "+e.sh+" min later":"")+". "+a.it.sp.c:"")+(a.kind=="ADD"?" Added into a rest break by the "+PACE[pk].n+" pace plan.":a.kind=="RES"?" Reservation booked for "+fmt(a.t)+".":" Time to be confirmed in the Disneyland app."),lc:plLc(p,a.it,a.it.a),st:""});
    if(a.it)atts(a.it.id);need=true}
   else if(e.k=="brk"){nb(e.t,"Rest break");cur.rows.push({g:"LEISURE",du:e.du+" mins",tx:"Rest break near "+PA.names[e.area]+". Sit down, hydrate and rest.",lc:plLc(p,null,e.area).slice(0,1),st:""});need=true}
   else if(e.k=="free"){nb(e.t,"Free time");cur.rows.push({g:"LEISURE",du:e.du+" mins",tx:"Free time near "+PA.names[e.area]+". Browse, rest or take photos.",lc:plLc(p,null,e.area).slice(0,1),st:""});need=true}});
@@ -1806,6 +2084,17 @@ function restArea(d,bi,ri){var own=String(d.blocks[bi].rows[ri].tx||""),m=own.ma
  return null}
 function restIdeas(d,bi,ri,r){if(r.g!="LEISURE")return"";var du=String(r.du||""),n=parseInt(du,10);if(du&&!/hour/i.test(du)&&n<15)return"";var k=restArea(d,bi,ri);if(!k||!RI[k])return"";var a=RI[k];
  return '<div class="ri"><b>Ideas near '+esc(a[0])+':</b> <span>Food and drink: '+esc(a[1])+'.</span> <span>Browse: '+esc(a[2])+'.</span> <i>Menus change, so check the app for holiday treats.</i></div>'}
+function refMap(d){var P=[];d.blocks.forEach(function(b,bi){b.rows.forEach(function(r,ri){(r.lc||[]).forEach(function(k){P.push({k:k,st:r.st,g:r.g})})})});
+ var m='';if(d.p=="ca")m+='<rect x="225" y="100" width="170" height="140" rx="30" fill="var(--water)"/><text class="zl" x="310" y="170" text-anchor="middle">Paradise Bay</text>';
+ else m+='<ellipse cx="205" cy="300" rx="38" ry="50" fill="var(--water)"/><circle cx="350" cy="385" r="26" fill="none" stroke="var(--line)" stroke-width="1.5"/><path d="M350 360v-20" stroke="var(--mut)" stroke-width="5" stroke-linecap="round"/>';
+ Z[d.p].forEach(function(z){m+='<rect class="zone" x="'+z[1]+'" y="'+z[2]+'" width="'+z[3]+'" height="'+z[4]+'" rx="14" fill="'+z[5]+'" fill-opacity=".55"/><text class="zl" x="'+(z[1]+z[3]/2)+'" y="'+(z[2]+14)+'" text-anchor="middle">'+z[0]+'</text>'});
+ m+='<text class="zl" x="350" y="572" text-anchor="middle">Park entrance</text>';
+ var live=P.filter(function(p){return p.st!="x"}).map(function(p){return L[d.p][p.k]||[350,300]});
+ if(live.length>1)m+='<polyline points="'+live.map(function(p){return p.join(",")}).join(" ")+'" fill="none" stroke="var(--acc)" stroke-width="2" stroke-dasharray="5 4" opacity=".75"/>';
+ for(var ai=1;ai<live.length;ai++){var a1=live[ai-1],a2=live[ai],dx=a2[0]-a1[0],dy=a2[1]-a1[1],ln=Math.sqrt(dx*dx+dy*dy);if(ln<28)continue;var ang=Math.atan2(dy,dx)*180/Math.PI;m+='<path d="M-7,-6L7,0L-7,6Z" transform="translate('+((a1[0]+a2[0])/2).toFixed(1)+','+((a1[1]+a2[1])/2).toFixed(1)+') rotate('+ang.toFixed(1)+')" fill="var(--acc)" stroke="var(--bg)" stroke-width="1.5"/>'}
+ var jit={};P.forEach(function(p,i){var q=L[d.p][p.k]||[350,300],k=q.join(),c=(jit[k]=(jit[k]||0)+1)-1,x=q[0]+c*13,y=q[1]-c*7,col=p.st=="x"?"#b91c1c":p.st=="d"?"#8a97a1":(TG[p.g]||["","#2563eb"])[1];
+  m+='<g><circle cx="'+x+'" cy="'+y+'" r="11" fill="'+col+'" stroke="#fff" stroke-width="2"/><text x="'+x+'" y="'+(y+4)+'" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">'+(p.st=="x"?"×":p.st=="d"?"✓":i+1)+'</text></g>'});
+ return '<details class="ps pmap" open><summary><b>Walking map for '+esc(d.tab)+'</b> ('+(d.p=="ca"?"California Adventure":"Disneyland")+')</summary><svg viewBox="0 0 700 580" role="img" aria-label="Schematic park map with numbered route for the plan shown below" style="width:100%;max-width:640px;height:auto;display:block;margin:6px auto">'+m+'</svg><p class="hint">'+(P.length?'Numbered stops follow the plan for '+esc(d.title||d.tab)+', in order, with dashed arrows for the walking route.':'No mapped stops yet. Add activities and make a plan to see the route.')+' Schematic sketch, not to scale and not the official map. Use it as a reference with the Disneyland app.</p></details>'}
 function dayv(){var d=S.days[cur],P=[],LLs=chain(d);d.blocks.forEach(function(b,bi){b.rows.forEach(function(r,ri){(r.lc||[]).forEach(function(k){P.push({b:bi,r:ri,k:k,st:r.st})})})});
  var m='';if(d.p=="ca")m+='<rect x="225" y="100" width="170" height="140" rx="30" fill="var(--water)"/><text class="zl" x="310" y="170" text-anchor="middle">Paradise Bay</text>';
  else m+='<ellipse cx="205" cy="300" rx="38" ry="50" fill="var(--water)"/><circle cx="350" cy="385" r="26" fill="none" stroke="var(--line)" stroke-width="1.5"/><path d="M350 360v-20" stroke="var(--mut)" stroke-width="5" stroke-linecap="round"/>';
@@ -1819,7 +2108,7 @@ function dayv(){var d=S.days[cur],P=[],LLs=chain(d);d.blocks.forEach(function(b,
   (num[p.b+"_"+p.r]=num[p.b+"_"+p.r]||[]).push(i+1);
   if(kfHide(d.blocks[p.b].rows[p.r].g,p.st))return;
   m+='<g class="pin" data-b="'+p.b+'" data-r="'+p.r+'" style="cursor:pointer"><circle cx="'+x+'" cy="'+y+'" r="'+(a?15:11)+'" fill="'+col+'" stroke="'+(a?'var(--acc)':'#fff')+'" stroke-width="'+(a?4:2)+'"/><text x="'+x+'" y="'+(y+4)+'">'+(p.st=="x"?"×":p.st=="d"?"✓":i+1)+'</text></g>'});
- var vg=plGroupOf(d),vb=vg.length>1?'<span class="vbadge">'+(d.ver?'V'+d.ver+' '+esc(d.vp||''):'V1 Original')+(plPrefOf(d)==d.tab?' ★ Preferred':'')+'</span>':'';var o='<h2>'+esc(d.title)+vb+'</h2>'+(vg.length>1?'<p class="pfp"><button class="ib pfb" data-a="pf">'+(plPrefOf(d)==d.tab?'★ Preferred version (tap to clear)':'☆ Make this my preferred version')+'</button></p>':'')+(d.focus?'<p class="hint"><b>Focus:</b> '+esc(d.focus)+'</p>':'')+(d.arr?'<p class="hint"><b>'+esc(d.arr)+'</b></p>':'')+plWinLine(d)+plGateLine(d)+wxBox(d)+(d.extra?'<p class="hint">'+fm(d.extra)+'</p>':'')+daySum(d)+'<div class="bar"><button class="ib" id="pbtn">Print this day</button><button class="ib" data-a="ed">Edit day details</button><button class="ib" data-a="rp">Re-plan the rest of the day</button>'+(S.prev&&S.prev.i==cur?'<button class="ib" data-a="un">Undo last re-plan</button>':'')+'</div>'+liveBar(d)+trk(LLs)+'<div class="wrap"><details class="map" open><summary>Route map</summary><svg id="svg" viewBox="0 0 700 580" role="img" aria-label="Schematic park map with numbered route">'+m+'</svg><div class="ctl"><button id="pv">Back</button><span id="pos">'+(P.length?P.length+' pins':'No pins yet')+'</span><button id="nx">Next</button></div>'+mapKey(d,P)+'<p class="hint">Schematic sketch, not to scale and not the official map. Arrows show the direction of travel.</p>'+actList(d,num)+'</details><div>';
+ var vg=plGroupOf(d),vb=vg.length>1?'<span class="vbadge">'+(d.ver?'V'+d.ver+' '+esc(d.vp||''):'V1 Original')+(plPrefOf(d)==d.tab?' ★ Preferred':'')+'</span>':'';var o='<h2>'+esc(d.title)+vb+'</h2>'+(vg.length>1?'<p class="pfp"><button class="ib pfb" data-a="pf">'+(plPrefOf(d)==d.tab?'★ Preferred version (tap to clear)':'☆ Make this my preferred version')+'</button></p>':'')+(d.focus?'<p class="hint"><b>Focus:</b> '+esc(d.focus)+'</p>':'')+(d.arr?'<p class="hint"><b>'+esc(d.arr)+'</b></p>':'')+plWinLine(d)+plGateLine(d)+plLLLine(d)+wxBox(d)+(d.extra?'<p class="hint">'+fm(d.extra)+'</p>':'')+daySum(d)+'<div class="bar"><button class="ib" id="pbtn">Print this day</button><button class="ib" data-a="ed">Edit day details</button><button class="ib" data-a="rp">Re-plan the rest of the day</button>'+(S.prev&&S.prev.i==cur?'<button class="ib" data-a="un">Undo last re-plan</button>':'')+'</div>'+liveBar(d)+trk(LLs)+'<div class="wrap"><details class="map" open><summary>Route map</summary><svg id="svg" viewBox="0 0 700 580" role="img" aria-label="Schematic park map with numbered route">'+m+'</svg><div class="ctl"><button id="pv">Back</button><span id="pos">'+(P.length?P.length+' pins':'No pins yet')+'</span><button id="nx">Next</button></div>'+mapKey(d,P)+'<p class="hint">Schematic sketch, not to scale and not the official map. Arrows show the direction of travel.</p>'+actList(d,num)+'</details><div>';
  o+=d.blocks.length?d.blocks.map(function(b,bi){var dn=b.rows.filter(function(r){return r.st=="d"}).length;
   return dnAt(d,bi)+'<section class="blk"><div class="bh"><span>'+esc(b.tm)+' | '+esc(b.ti)+(b.was?'<span class="was">was '+esc(b.was)+'</span>':'')+blkTot(d,bi)+'</span><span class="t"><button data-a="bt" data-b="'+bi+'">Time</button></span></div>'+b.rows.map(function(r,ri){var n=num[bi+"_"+ri];
    return '<div class="r '+r.st+(kfHide(r.g,r.st)?' kh':'')+'" data-b="'+bi+'" data-r="'+ri+'"'+(bi==sel.b&&ri==sel.r?' aria-current="true"':'')+'><span class="chip" style="background:'+TG[r.g][1]+'">'+TG[r.g][0]+'</span><div><div class="tx">'+(r.du?'<b>('+esc(r.du)+')</b> ':'')+fm(r.tx)+resBadge(d,r)+(n?'<span class="pn">Pin '+n.join(", ")+'</span>':'')+(r.sk?'<span class="sk">Skip if short on time</span>':'')+'</div>'+restIdeas(d,bi,ri,r)+llInfo(LLs,d,bi,ri,r)+transitInfo(d,bi,ri,r)+liveRow(d,r,b.tm)+'<div class="rc"><button data-a="d">'+(r.st=="d"?"Undo done":"Done")+'</button><button data-a="x">'+(r.st=="x"?"Reopen":"Closed")+'</button>'+(r.g=="LL"?'<button data-a="lt">LL times</button>':'')+'</div></div></div>'}).join("")+'</section>'}).join(""):'<p class="hint">Nothing here yet. Add your first time block.</p>';
